@@ -7,7 +7,7 @@ from math import ceil
 
 import matplotlib.pyplot as plt
 import numpy as np
-import openai
+from openai import OpenAI
 import pandas as pd
 import translators as ts
 import translators.server as tss
@@ -15,12 +15,15 @@ from bing_image_downloader import downloader
 from googletrans import Translator
 from srtools import cyrillic_to_latin
 
+api_key = ''
+with open('pydata/api.txt') as f:
+    api_key = f.readlines()[0]
+client = OpenAI(api_key=api_key)
 PATH_DATA = "pydata/py_csv/"
     # Svaki hotel approx 250 soba->standardna distribucija generate random da bude mean 250 i ukupno ~60000 oglasa, znaci->broj soba ~250 na 240hotela
 global fr
 global to
-fr,to = 'en_US','sr-Cyrl_RS'
-
+fr,to = 'en_GB','sr-Cyrl_RS'
 BED_NUM = [1,2,3,4]
 TYPE = {
     'SUITE':["Soba u hotelu (dve prostorije koje ne moraju biti odvojene vratima) odgovarajuće kvadrature za kapacitet od četiri osobe sa minimum dva pomoćna ležaja ili sofom na otvaranje.Sadrži stabilnu internet konekciju, frižider, TV i AC.",1.75],
@@ -58,7 +61,7 @@ def translateElement(el):
     """
     global fr,to
 
-    return cyrillic_to_latin(tss.lingvanex(el, fr, to)['text'])
+    return cyrillic_to_latin(tss.lingvanex(el, fr, to))
 
 
 def dataframeCleaner(df,path):
@@ -78,14 +81,7 @@ def dataframeCleaner(df,path):
     return df
 
 
-def setGPT():
-    """Poziva GPT3 
 
-    """
-
-    
-    with open('pydata/api.txt') as f:
-        openai.api_key = f.readlines()[0]
     
     
 def hotelGPT(place):
@@ -97,12 +93,10 @@ def hotelGPT(place):
     Returns:
         list: Listu stringova generisanih naziva hotela
     """
-    
-    setGPT()
     rgx = '[^a-zA-ZčćžšđČĆŽŠĐ ]+'
     prompt = "Generiši 3 nasumična imena za hotele u mestu "+place+" koji ne sadrže ime mesta u nazivu."
-    response = openai.Completion.create(
-    engine="text-davinci-003",
+    response = client.completions.create(
+    model="gpt-3.5-turbo-instruct",
     prompt=prompt,temperature=0.9,
     max_tokens=150,
     top_p=1,
@@ -118,14 +112,11 @@ def hotelGPT(place):
 
 #setGPT("Šangaj")
 def companyGPT():
-    setGPT()
     prompt = "Generiši 4 nasumična jednostavna imena kompanija za prevoz turista do turističke destinacije."
-    with open('pydata/api.txt') as f:
-        openai.api_key = f.readlines()[0]
     
     
-    response = openai.Completion.create(
-    engine="text-davinci-003",
+    response = client.completions.create(
+    model="gpt-3.5-turbo-instruct",
     prompt=prompt,temperature=0.9,
     max_tokens=150,
     top_p=1,

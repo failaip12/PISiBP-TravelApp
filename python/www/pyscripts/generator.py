@@ -48,8 +48,8 @@ def getContinents():
     content = browser.page_source
     soup = BeautifulSoup(content,features="lxml")
     names = []
-    for a in soup.findAll('table', attrs={'class':'table'}):
-        for name in a.findAll('a'):
+    for a in soup.find_all('table', attrs={'class':'table'}):
+        for name in a.find_all('a'):
             names.append(name.text) #names sadrzi engl kontinente
         for name in names:
         #continents.append(cyrillic_to_latin(tss.google(name, fr, to)))
@@ -72,10 +72,10 @@ def getContinentsAndCountries():
         time.sleep(2)
         content = browser.page_source
         soup = BeautifulSoup(content,features="lxml")
-        for a in soup.findAll('table', attrs={'class':'table'}):
+        for a in soup.find_all('table', attrs={'class':'table'}):
             howmuch = 15 if name == 'Europe' else 3                                               #koliko drzava po kontinentu?
             
-            for country in a.findAll('td'):
+            for country in a.find_all('td'):
                 if not howmuch:
                     break
                 
@@ -102,14 +102,13 @@ def getAllGeography():
         content = browser.page_source
         
         soup = BeautifulSoup(content,features="lxml")
-        try:
-            browser.find_element(By.CLASS_NAME('_3p_1XEZR')).submit()
-
-        except:
-            pass
-        for a in soup.findAll('table', attrs={'class':'table'}):
+        #try:
+        #    browser.find_element(By.CLASS_NAME('_3p_1XEZR')).submit()
+        #except:
+        #    pass
+        for a in soup.find_all('table', attrs={'class':'wpr-table'}):
             howmuch = 5 if drzave.loc[drzave["naziv"]==name,"kontinent"].values[0] == 'Europe' else 5              
-            for city in a.findAll('td'):
+            for city in a.find_all('th')[2:]:
 
                 if not howmuch:
                     break
@@ -134,7 +133,8 @@ def getAllGeography():
     
     
 def getAllDFs():
-    gradovi,drzave,kontinenti = getAllGeography()
+    #gradovi,drzave,kontinenti = getAllGeography()
+    gradovi = pd.read_csv(PATH_DATA+'gradovi.csv')
     hoteli = pd.DataFrame(columns=["naziv","grad"])
     for index, val in gradovi['naziv'].items():
 
@@ -183,7 +183,8 @@ def hotelGenerateAddress():
     fake = Faker()
     cutSpaces = np.vectorize(lambda x: x.replace('  ',' ')) #[''.join(y) for y in x[0:len(x.split(' '))-1]]
     cutAptNums = np.vectorize(lambda x: (' '.join([''.join(y) for y in x.split(' ')[0:len(x.split(' '))-1]]) if x.split(' ')[len(x.split(' '))-1].isnumeric() else x))
-    addresses = cutAptNums(cutSpaces(np.array([' '.join([y if not ('Suite' in y or 'Apt.' in y) else '' for y in fake.address().split('\n')[0].split(' ') ]) for i in range(len(hoteli.index))],dtype=str))) 
+    arr = np.array([' '.join([y if not ('Suite' in y or 'Apt.' in y) else '' for y in fake.address().split('\n')[0].split(' ') ]) for i in range(len(hoteli.index))],dtype=str)
+    addresses = cutAptNums(cutSpaces(arr)) 
         #this is why we love python
     hoteli['adresa'] = addresses
     hoteli.to_csv(PATH_DATA+'hoteli.csv',index=None)
@@ -276,7 +277,7 @@ def generatePonude():
     timeline = pd.DataFrame()
     timeline['broj_dana'],timeline['tmp'] = ['3','5','7','10','14'],1
     meseci = pd.DataFrame()
-    meseci['mesecMin'],meseci['mesecMax'],meseci['tmp'] = ['2023-1-1','2023-6-1','2023-7-1','2023-8-1','2023-9-1','2023-10-1'],['2023-1-31','2023-6-30','2023-7-31','2023-8-31','2023-9-30','2023-10-31'],1
+    meseci['mesecMin'],meseci['mesecMax'],meseci['tmp'] = ['2025-1-1','2025-6-1','2025-7-1','2025-8-1','2025-9-1','2025-10-1'],['2025-1-31','2025-6-30','2025-7-31','2025-8-31','2025-9-30','2025-10-31'],1
     meseci['mesec'],meseci['mpr'] = ['1','6','7','8','9','10'],["Januar","Jun","Jul","Avgust","Septembar","Oktobar"]
     aranzman = pd.merge(aranzman, timeline, on=['tmp'])
     aranzman = pd.merge(aranzman, meseci, on=['tmp'])
@@ -352,21 +353,21 @@ def generateRandomRezervacije(n):
     rez.to_csv(PATH_DATA+"rand_rez.csv",index=None)
 
 def generator():
-    getAllDFs()
-    hotelStarsDistribution()
-    generateRooms()
-    hotelGenerateAddress()
-    sobaParamGen()
-    PlotGeneratedInfos()
-    generatePrevoznik()
+    #getAllDFs()
+    #hotelStarsDistribution()
+    #generateRooms()
+    #hotelGenerateAddress()
+    #sobaParamGen()
+    #PlotGeneratedInfos()
+    #generatePrevoznik()
     generatePonude()
-    generateAktivnosti()        
-    smestajImaAktivnost()
-    generateImaAktivnost()
-    generateRandomRezervacije(150)
+    #generateAktivnosti()        
+    #smestajImaAktivnost()
+    #generateImaAktivnost()
+    #generateRandomRezervacije(150)
 
 
 start = time.time()
-#generator()
+generator()
 end = time.time()
 print(end - start)
