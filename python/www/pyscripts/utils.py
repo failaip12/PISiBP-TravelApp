@@ -33,12 +33,12 @@ TYPE = {
     "STUDIO":["“Garsonjera” - smeštajna jedinica u hotelu, bez predsoblja, u kojoj se u istom prostoru nalazi deo sa kuhinjskim elementima sa osnovnim priborom za jelo.Sadrži stabilnu internet konekciju, TV i frižider.",1.25]
 }
 
-def dodajRandomGrad(y):
+def dodajRandomGrad():
     x = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv"))
     return random.choice(range(1,len(x.index)+1))
 
 
-def dodajRandomAktivnost(y):
+def dodajRandomAktivnost():
     x = pd.read_csv(os.path.join(PATH_DATA, "aktivnosti.csv"))
     return random.choice(range(1,len(x.index)+1))
 #TYPE SADRZI OPIS I 
@@ -177,7 +177,7 @@ def plotTools(case,what,
     
     
 def paramValuesGenerator(s):
-    return  ','.join(['%s' for x in range(len(s[s.find("(")+1:s.find(")")].split(",")))])
+    return  ','.join(['%s' for _ in range(len(s[s.find("(")+1:s.find(")")].split(",")))])
     
 def trimPonude():
     #aranzman(aran_id,naziv,krece,vraca,nap,smestaj_id,p_id)
@@ -199,10 +199,10 @@ def dataTrimming():
     
     def switchToKey(df,col,x):  #col ako nije  ukazuje da se radi o dataframe else o series
         if col:
-            ret = np.where(df[col]==x)
+            ret = np.nonzero(df[col]==x)
             return ret[0][0]+1
 
-        return np.where(df==x)[0][0]+1
+        return np.nonzero(df==x)[0][0]+1
     
     
     

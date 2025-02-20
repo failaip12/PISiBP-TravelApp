@@ -72,7 +72,7 @@ def getContinentsAndCountries():
     drzave = pd.DataFrame(columns = ['naziv','kontinent'])
 
     for name in kontinenti['naziv'].values:
-        temp = name.replace(" ","-")
+        name.replace(" ","-")
         newlink = link + '/'+name.lower().replace(' ','-')+'/'
 
         page.goto(newlink)
@@ -108,7 +108,7 @@ def get_city_data(args):
         
         soup = BeautifulSoup(content, features="lxml")
         for a in soup.find_all('table', attrs={'class':'wpr-table'}):
-            howmuch = 5 if drzave.loc[drzave["naziv"]==name,"kontinent"].values[0] == 'Europe' else 5              
+            howmuch = 5 #if drzave.loc[drzave["naziv"]==name,"kontinent"].values[0] == 'Europe' else 5              
             for city in a.find_all('th')[2:]:
                 if not howmuch:
                     break
@@ -201,7 +201,7 @@ def generateRooms():   #testirati sumu broja soba
     np.random.seed(5)
     mu = 75
     sigma = 25
-    hoteli['br_soba'] = np.random.normal(mu, sigma, hoteli.shape[0])*hoteli['zvezdice']
+    hoteli['br_soba'] = np.random.Generator.normal(mu, sigma, hoteli.shape[0])*hoteli['zvezdice']
     hoteli['br_soba']=hoteli['br_soba'].apply(round)
     hoteli.to_csv(os.path.join(PATH_DATA, 'hoteli.csv'),index = None)
     
@@ -218,7 +218,7 @@ def hotelStarsDistribution():   #koristiti kasnije openAI da generise opis hotel
     except:
         hoteli,_,_,_ = getAllDFs()
         
-    hoteli['zvezdice'] = np.random.normal(mu, sigma, hoteli.shape[0])
+    hoteli['zvezdice'] = np.random.Generator.normal(mu, sigma, hoteli.shape[0])
     hoteli['zvezdice'] = hoteli['zvezdice'].apply(roundStars)
     hoteli.to_csv(os.path.join(PATH_DATA, 'hoteli.csv'),index = None)
     
@@ -230,7 +230,7 @@ def hotelGenerateAddress():
     fake = Faker()
     cutSpaces = np.vectorize(lambda x: x.replace('  ',' ')) #[''.join(y) for y in x[0:len(x.split(' '))-1]]
     cutAptNums = np.vectorize(lambda x: (' '.join([''.join(y) for y in x.split(' ')[0:len(x.split(' '))-1]]) if x.split(' ')[len(x.split(' '))-1].isnumeric() else x))
-    arr = np.array([' '.join([y if not ('Suite' in y or 'Apt.' in y) else '' for y in fake.address().split('\n')[0].split(' ') ]) for i in range(len(hoteli.index))],dtype=str)
+    arr = np.array([' '.join([y if not ('Suite' in y or 'Apt.' in y) else '' for y in fake.address().split('\n')[0].split(' ') ]) for _ in range(len(hoteli.index))],dtype=str)
     addresses = cutAptNums(cutSpaces(arr)) 
         #this is why we love python
     hoteli['adresa'] = addresses
@@ -281,15 +281,14 @@ def generatePonude():
     naziv->
     
     """
-    gradovi = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv'))
+    #gradovi = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv'))
     hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
     prevoz = pd.read_csv(os.path.join(PATH_DATA, 'prevoz.csv'))
-    aranzman = pd.DataFrame(columns = ["naziv","krece","vraca","smestaj","p_id"])
+    #aranzman = pd.DataFrame(columns = ["naziv","krece","vraca","smestaj","p_id"])
     hoteli['tmp'] = 1
     prevoz['tmp'] = 1
     prevoz['p_id'] = prevoz.index+1
     prevoz['prevod'] = ["avionom","autobusom","krstarenje/brodom","vozom","samostalni prevoz"]
-    prevoz['tmp']=1
 
     temp=pd.DataFrame()
     temp['naziv'] = hoteli['naziv']
@@ -363,7 +362,7 @@ def generateAktivnosti():
 def smestajImaAktivnost():#g_id	akt_id	smestaj_id	
 
         
-    gradovi = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv")).index+1
+    #gradovi = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv")).index+1
     akt = pd.DataFrame(columns = ["g_id","akt_id","smestaj_id"])
     akt['smestaj_id'] = pd.read_csv(os.path.join(PATH_DATA, "hoteli.csv")).index+1
     akt=akt.fillna('0')
@@ -373,7 +372,7 @@ def smestajImaAktivnost():#g_id	akt_id	smestaj_id
     #akt['g_id'] = 
     
 def generateImaAktivnost():
-    decompose = lambda x: [1 for i in range(int(x))]
+    decompose = lambda x: [1 for _ in range(int(x))]
     
     aran = pd.read_csv(os.path.join(PATH_DATA, "aranzmani.csv"))
     aran['broj_dana'] = aran['broj_dana'].apply(lambda x: x-1)
@@ -385,7 +384,7 @@ def generateImaAktivnost():
     aran['akt_id']=aran['broj_dana'].apply(decompose)
     ima = aran.explode('akt_id')
     ima = ima.drop(columns=['broj_dana','smestaj_id'])
-    ima['akt_id'] = np.random.choice(ids, ima.shape[0])
+    ima['akt_id'] = np.random.Generator.choice(ids, ima.shape[0])
     ima.to_csv(os.path.join(PATH_DATA, "ima_aktivnost.csv"),index=None)
     
 
@@ -398,13 +397,13 @@ def generateRandomRezervacije(n):
         'prezime': pd.Series([faker.last_name() for _ in range(n)]),
         'br_kartice': pd.Series([''.join(random.choices(string.ascii_lowercase, k=8)) for _ in range(n)]),
         'email': pd.Series([f"{faker.last_name()}@gmail.com" for _ in range(n)]),
-        'broj_odr': pd.Series(np.random.randint(0, 4, n)),
-        'broj_dece': pd.Series(np.random.randint(0, 4, n)),
-        'cena': pd.Series(np.random.randint(100, 501, n)),
-        'kom': pd.Series(np.random.randint(1, 6, n)),
+        'broj_odr': pd.Series(np.random.Generator.integers(0, 4, n)),
+        'broj_dece': pd.Series(np.random.Generator.integers(0, 4, n)),
+        'cena': pd.Series(np.random.Generator.integers(100, 501, n)),
+        'kom': pd.Series(np.random.Generator.integers(1, 6, n)),
         'kontakt': pd.Series([''.join(random.choices(string.ascii_lowercase, k=10)) for _ in range(n)]),
-        'aran_id': pd.Series(np.random.randint(1, 50001, n)),
-        'broj_soba': pd.Series(np.random.randint(1, 6, n))
+        'aran_id': pd.Series(np.random.Generator.integers(1, 50001, n)),
+        'broj_soba': pd.Series(np.random.Generator.integers(1, 6, n))
     })
     
     rez.to_csv(os.path.join(PATH_DATA, "rand_rez.csv"), index=None)

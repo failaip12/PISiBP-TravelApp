@@ -129,7 +129,7 @@ class Populator(object):
     def insertGradSlike(self):
         gradovi = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv"))
         imena = gradovi['naziv'].values
-        id = list(range(1,len(gradovi.index)+1))
+        #id = list(range(1,len(gradovi.index)+1))
         idG=1
         for ime in imena:
             ime=ime.replace(' ','_')
