@@ -19,6 +19,7 @@ from selenium.webdriver.support.ui import Select
 from utils import (BED_NUM, TYPE, companyGPT, dodajRandomAktivnost,
                    dodajRandomGrad, hotelGPT, plotTools, roundStars,
                    translateElement)
+from config import PATH_DATA
 
 """
     
@@ -28,8 +29,6 @@ TESTIRATI GENERATORE
     """
 global link
 link = 'https://www.worldometers.info/geography/7-continents/'          
-
-PATH_DATA = "pydata/py_csv/"
 
 def getDriver():#na kraju prevesti celokupni df
     
@@ -117,7 +116,7 @@ def getAllGeography():
                     gradovi.loc[len(gradovi.index)] = [city.text,drzave.loc[drzave['naziv']==name,'naziv'].values[0],drzave.loc[drzave['naziv']==name,'kontinent'].values[0]]
                     howmuch-=1
                     
-    gradovi.to_csv(PATH_DATA+'cities.csv',index=None)
+    gradovi.to_csv(os.path.join(PATH_DATA, 'cities.csv'),index=None)
     
     
     
@@ -126,37 +125,38 @@ def getAllGeography():
     gradovi['naziv']=gradovi['naziv'].apply(translateElement)
     gradovi['drzava']=gradovi['drzava'].apply(translateElement)
     gradovi['kontinent']=gradovi['kontinent'].apply(translateElement)
-    gradovi.to_csv(PATH_DATA+'gradovi.csv',index=None)
+    gradovi.to_csv(os.path.join(PATH_DATA, 'gradovi.csv'),index=None)
     return gradovi,drzave,kontinenti
     
     
     
     
 def getAllDFs():
-    #gradovi,drzave,kontinenti = getAllGeography()
-    gradovi = pd.read_csv(PATH_DATA+'gradovi.csv')
+    gradovi,drzave,kontinenti = getAllGeography()
+    #gradovi = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv'))
     hoteli = pd.DataFrame(columns=["naziv","grad"])
     for index, val in gradovi['naziv'].items():
 
         imena = hotelGPT(val)
         for ime in imena:
             hoteli.loc[len(hoteli.index)] = [ime,val]
+            print(ime)
             
     
-    hoteli.to_csv(PATH_DATA+'hoteli.csv',index=None)
+    hoteli.to_csv(os.path.join(PATH_DATA, 'hoteli.csv'),index=None)
 
     return hoteli,gradovi,drzave,kontinenti
 
 
 
 def generateRooms():   #testirati sumu broja soba
-    hoteli = pd.read_csv(PATH_DATA+'hoteli.csv')
+    hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
     np.random.seed(5)
     mu = 75
     sigma = 25
     hoteli['br_soba'] = np.random.normal(mu, sigma, hoteli.shape[0])*hoteli['zvezdice']
     hoteli['br_soba']=hoteli['br_soba'].apply(round)
-    hoteli.to_csv(PATH_DATA+'hoteli.csv',index = None)
+    hoteli.to_csv(os.path.join(PATH_DATA, 'hoteli.csv'),index = None)
     
 
 def hotelStarsDistribution():   #koristiti kasnije openAI da generise opis hotela
@@ -166,18 +166,18 @@ def hotelStarsDistribution():   #koristiti kasnije openAI da generise opis hotel
     sigma = 0.5
     
     try:    
-        hoteli = pd.read_csv(PATH_DATA+'hoteli.csv')
+        hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
         
     except:
         hoteli,_,_,_ = getAllDFs()
         
     hoteli['zvezdice'] = np.random.normal(mu, sigma, hoteli.shape[0])
     hoteli['zvezdice'] = hoteli['zvezdice'].apply(roundStars)
-    hoteli.to_csv(PATH_DATA+'hoteli.csv',index = None)
+    hoteli.to_csv(os.path.join(PATH_DATA, 'hoteli.csv'),index = None)
     
 def hotelGenerateAddress():
     try:
-        hoteli = pd.read_csv(PATH_DATA+'hoteli.csv')
+        hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
     except:
         hoteli,_,_,_ = getAllDFs()
     fake = Faker()
@@ -187,11 +187,11 @@ def hotelGenerateAddress():
     addresses = cutAptNums(cutSpaces(arr)) 
         #this is why we love python
     hoteli['adresa'] = addresses
-    hoteli.to_csv(PATH_DATA+'hoteli.csv',index=None)
+    hoteli.to_csv(os.path.join(PATH_DATA, 'hoteli.csv'),index=None)
 
 def PlotGeneratedInfos():
-    hoteli = pd.read_csv(PATH_DATA+'hoteli.csv')
-    gradovi = pd.read_csv(PATH_DATA+'gradovi.csv')
+    hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
+    gradovi = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv'))
     plotTools(what=hoteli,case=1,title="Raspodela zvezdica hotela",x="Broj zvezdica",y="Kolicina",path = "hotel_stars_normal.png")
     plotTools(what=gradovi,case=2,title="Raspodela kolicine hotela po zemljama",x="Drzava",y="Broj hotela",path = "country_to_no_hotels.png")
     plotTools(what=gradovi,case=3,title="Raspodela kolicine hotela po kontinentima",x="Kontinent",y="Broj hotela",path = "continent_to_no_hotels.png")
@@ -208,7 +208,7 @@ def sobaParamGen(base=10):
 
             sobe.loc[len(sobe.index)] = [i,j,TYPE[i][0],round(TYPE[i][1]*j*kreveti_multiplier * base,2)]       
             
-    sobe.to_csv(PATH_DATA+'sobe.csv',index = None)
+    sobe.to_csv(os.path.join(PATH_DATA, 'sobe.csv'),index = None)
 
 def generatePrevoznik():
     prevoz = pd.DataFrame(columns=['tip','tip_komp'])
@@ -217,7 +217,7 @@ def generatePrevoznik():
     prevoz['cena'] = [random.choice(range(1000,3000)),random.choice(range(100,250)),random.choice(range(250,950)),random.choice(range(100,150))]
             
     prevoz.loc[len(prevoz.index)] = ['lično vozilo', 'samostalni prevoz',0]
-    prevoz.to_csv(PATH_DATA+'prevoz.csv',index=None)
+    prevoz.to_csv(os.path.join(PATH_DATA, 'prevoz.csv'),index=None)
 
     
     
@@ -230,9 +230,9 @@ def generatePonude():
     naziv->
     
     """
-    gradovi = pd.read_csv(PATH_DATA+'gradovi.csv')
-    hoteli = pd.read_csv(PATH_DATA+'hoteli.csv')
-    prevoz = pd.read_csv(PATH_DATA+'prevoz.csv')
+    gradovi = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv'))
+    hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
+    prevoz = pd.read_csv(os.path.join(PATH_DATA, 'prevoz.csv'))
     aranzman = pd.DataFrame(columns = ["naziv","krece","vraca","smestaj","p_id"])
     hoteli['tmp'] = 1
     prevoz['tmp'] = 1
@@ -291,7 +291,7 @@ def generatePonude():
     aranzman['m_str'] = aranzman['datum_pocetka'].dt.strftime('%')
     #hoteli.loc[hoteli['naziv']==aranzman['naziv'],"grad"].values() + 
     aranzman['ime'] = aranzman['grad'] + " " + aranzman['mpr'] + " "+ aranzman['godina'] + " " + aranzman['naziv'] + " " + aranzman['prevod']+ " " + aranzman['broj_dana'] + " dana"
-    aranzman.to_csv(PATH_DATA+"aranzmani.csv",index=None)
+    aranzman.to_csv(os.path.join(PATH_DATA, "aranzmani.csv"),index=None)
     
 def generateAktivnosti():
     df = pd.DataFrame(columns = ["naziv"])
@@ -300,28 +300,28 @@ def generateAktivnosti():
                 "Obilazak obliznjih lokaliteta","Organizovani nocni provod"]:
         df.loc[len(df.index)]=x;
         
-    df.to_csv(PATH_DATA+"aktivnosti.csv",index=None);
+    df.to_csv(os.path.join(PATH_DATA, "aktivnosti.csv"),index=None);
     
     
 def smestajImaAktivnost():#g_id	akt_id	smestaj_id	
 
         
-    gradovi = pd.read_csv(PATH_DATA+"gradovi.csv").index+1
+    gradovi = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv")).index+1
     akt = pd.DataFrame(columns = ["g_id","akt_id","smestaj_id"])
-    akt['smestaj_id'] = pd.read_csv(PATH_DATA+"hoteli.csv").index+1
+    akt['smestaj_id'] = pd.read_csv(os.path.join(PATH_DATA, "hoteli.csv")).index+1
     akt=akt.fillna('0')
     akt['g_id'] = akt['g_id'].apply(dodajRandomGrad)
     akt['akt_id'] = akt['akt_id'].apply(dodajRandomAktivnost)
-    akt.to_csv(PATH_DATA+"aktivnosti_u_gradu.csv",index=None)
+    akt.to_csv(os.path.join(PATH_DATA, "aktivnosti_u_gradu.csv"),index=None)
     #akt['g_id'] = 
     
 def generateImaAktivnost():
     decompose = lambda x: [1 for i in range(int(x))]
     
-    aran = pd.read_csv(PATH_DATA+"aranzmani.csv")
+    aran = pd.read_csv(os.path.join(PATH_DATA, "aranzmani.csv"))
     aran['broj_dana'] = aran['broj_dana'].apply(lambda x: x-1)
 
-    akt = pd.read_csv(PATH_DATA+"aktivnosti.csv")
+    akt = pd.read_csv(os.path.join(PATH_DATA, "aktivnosti.csv"))
     ids = akt.index+1
     ima = pd.DataFrame(columns=['aran_id','akt_id'])
     aran=aran.drop(columns=['naziv','grad','br_soba','adresa','tip','tip_komp','p_id','prevod','mesec','mpr','datum_pocetka','datum_zavrsetka','godina','m_str','ime','zvezdice'])
@@ -330,7 +330,7 @@ def generateImaAktivnost():
     ima = aran.explode('akt_id')
     ima = ima.drop(columns=['broj_dana','smestaj_id'])
     ima['akt_id'] = np.random.choice(ids, ima.shape[0])
-    ima.to_csv(PATH_DATA+"ima_aktivnost.csv",index=None)
+    ima.to_csv(os.path.join(PATH_DATA, "ima_aktivnost.csv"),index=None)
     
 
 def generateRandomRezervacije(n):
@@ -350,21 +350,21 @@ def generateRandomRezervacije(n):
     rez['aran_id'] = [random.randint(1,50000) for _ in range(n)]
     rez['broj_soba'] = [random.randint(1,5) for _ in range(n)]
     
-    rez.to_csv(PATH_DATA+"rand_rez.csv",index=None)
+    rez.to_csv(os.path.join(PATH_DATA, "rand_rez.csv"),index=None)
 
 def generator():
-    #getAllDFs()
-    #hotelStarsDistribution()
-    #generateRooms()
-    #hotelGenerateAddress()
-    #sobaParamGen()
-    #PlotGeneratedInfos()
-    #generatePrevoznik()
+    getAllDFs()
+    hotelStarsDistribution()
+    generateRooms()
+    hotelGenerateAddress()
+    sobaParamGen()
+    PlotGeneratedInfos()
+    generatePrevoznik()
     generatePonude()
-    #generateAktivnosti()        
-    #smestajImaAktivnost()
-    #generateImaAktivnost()
-    #generateRandomRezervacije(150)
+    generateAktivnosti()        
+    smestajImaAktivnost()
+    generateImaAktivnost()
+    generateRandomRezervacije(150)
 
 
 start = time.time()

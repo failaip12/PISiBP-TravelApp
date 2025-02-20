@@ -1,14 +1,14 @@
 naziv,drzava,kontinent
-Shanghai,China,Asia
-Beijing,China,Asia
-Shenzhen,China,Asia
-Guangzhou,China,Asia
-Chengdu,China,Asia
 Mumbai,India,Asia
 Delhi,India,Asia
 Bengaluru,India,Asia
-Hyderabad,India,Asia
-Ahmedabad,India,Asia
+Kolkata,India,Asia
+Chennai,India,Asia
+Shanghai,China,Asia
+Beijing,China,Asia
+Tianjin,China,Asia
+Guangzhou,China,Asia
+Shenzhen,China,Asia
 Jakarta,Indonesia,Asia
 Surabaya,Indonesia,Asia
 Medan,Indonesia,Asia
@@ -17,8 +17,8 @@ Bekasi,Indonesia,Asia
 Lagos,Nigeria,Africa
 Kano,Nigeria,Africa
 Ibadan,Nigeria,Africa
+Kaduna,Nigeria,Africa
 Port Harcourt,Nigeria,Africa
-Benin City,Nigeria,Africa
 Addis Ababa,Ethiopia,Africa
 Dire Dawa,Ethiopia,Africa
 Nazret,Ethiopia,Africa
@@ -42,8 +42,8 @@ Frankfurt am Main,Germany,Europe
 London,United Kingdom,Europe
 Birmingham,United Kingdom,Europe
 Liverpool,United Kingdom,Europe
+Nottingham,United Kingdom,Europe
 Sheffield,United Kingdom,Europe
-Bristol,United Kingdom,Europe
 Paris,France,Europe
 Marseille,France,Europe
 Lyon,France,Europe
@@ -59,16 +59,16 @@ Barcelona,Spain,Europe
 Valencia,Spain,Europe
 Sevilla,Spain,Europe
 Zaragoza,Spain,Europe
-Kyiv,Ukraine,Europe
-Kharkiv,Ukraine,Europe
-Donetsk,Ukraine,Europe
-Odessa,Ukraine,Europe
-Dnipro,Ukraine,Europe
 Warsaw,Poland,Europe
 Lodz,Poland,Europe
 Krakow,Poland,Europe
 Wroclaw,Poland,Europe
 Poznan,Poland,Europe
+Kyiv,Ukraine,Europe
+Kharkiv,Ukraine,Europe
+Dnipro,Ukraine,Europe
+Donetsk,Ukraine,Europe
+Odessa,Ukraine,Europe
 Bucharest,Romania,Europe
 Iasi,Romania,Europe
 Timisoara,Romania,Europe
@@ -84,21 +84,21 @@ Antwerpen,Belgium,Europe
 Gent,Belgium,Europe
 Charleroi,Belgium,Europe
 Liege,Belgium,Europe
-Athens,Greece,Europe
-Thessaloniki,Greece,Europe
-Patra,Greece,Europe
-Piraeus,Greece,Europe
-Larisa,Greece,Europe
-Lisbon,Portugal,Europe
-Porto,Portugal,Europe
-Amadora,Portugal,Europe
-Braga,Portugal,Europe
-Setubal,Portugal,Europe
 Stockholm,Sweden,Europe
 Goeteborg,Sweden,Europe
 Malmoe,Sweden,Europe
 Uppsala,Sweden,Europe
 Sollentuna,Sweden,Europe
+Lisbon,Portugal,Europe
+Porto,Portugal,Europe
+Amadora,Portugal,Europe
+Braga,Portugal,Europe
+Setubal,Portugal,Europe
+Athens,Greece,Europe
+Thessaloniki,Greece,Europe
+Patra,Greece,Europe
+Piraeus,Greece,Europe
+Larisa,Greece,Europe
 Mexico City,Mexico,North America
 Iztapalapa,Mexico,North America
 Ecatepec de Morelos,Mexico,North America
@@ -143,4 +143,4 @@ Auckland,New Zealand,Australia/Oceania
 Wellington,New Zealand,Australia/Oceania
 Christchurch,New Zealand,Australia/Oceania
 Manukau City,New Zealand,Australia/Oceania
-North Shore,New Zealand,Australia/Oceania
+Waitakere,New Zealand,Australia/Oceania

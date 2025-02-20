@@ -5,9 +5,9 @@ import os
 import mysql.connector
 import numpy as np
 import pandas as pd
-from generator import PATH_DATA
 from mysql.connector import Error
 from utils import dataTrimming, paramValuesGenerator
+from config import PATH_DATA, PATH_IMAGES_TRAVEL, PATH_IMAGES_CITIES
 
 
 class Populator(object):
@@ -21,11 +21,16 @@ class Populator(object):
 
     def Connect(self):
         try:
-            self.connection = mysql.connector.connect(host='db',
+            #self.connection = mysql.connector.connect(host='db',
+            #                                        database='travel',
+            #                                        port='3306',
+            #                                        user='user',
+            #                                        password='test')
+            self.connection = mysql.connector.connect(host='localhost',
                                                 database='travel',
                                                 port='3306',
-                                                user='user',
-                                                password='test')
+                                                user='root',
+                                                password='')
             if self.connection.is_connected():
                 db_Info = self.connection.get_server_info()
                 print("Povezan ", db_Info)
@@ -36,6 +41,7 @@ class Populator(object):
 
         except Error as e:
             print("Greška u konekciji ", e)
+            exit(1)
 
     def Close(self):
         if self.connection.is_connected():
@@ -58,28 +64,37 @@ class Populator(object):
             self.connection.commit()
         
         
-    def Exec(self,stmt,df):
-
-        if type(df) == type(np.zeros(1)):
-            conv_df = [tuple([x]) for x in df]
+    def Exec(self, stmt, df):
+        try:
+            if isinstance(df, np.ndarray):
+                # Handle 1D numpy array
+                if df.ndim == 1:
+                    conv_df = [tuple([x]) for x in df]
+                else:
+                    conv_df = [tuple(x) for x in df]
+            else:
+                # Handle pandas DataFrame
+                conv_df = [tuple(x) for x in df.to_numpy()]
+            
             self.cursor.executemany(stmt, conv_df)
             self.connection.commit()
-            return
-        
-        conv_df = [tuple(x) for x in df.to_numpy()]
-        self.cursor.executemany(stmt, conv_df)
-        self.connection.commit()
+        except Error as e:
+            print(f"Error executing SQL statement: {e}")
+            print(f"Statement: {stmt}")
+            print(f"First row of data: {conv_df[0] if conv_df else 'No data'}")
+            raise
                     
     def Append(self):
-        
-        
         tables = ['kontinent(ime)','drzava(ime,k_id)','grad(ime,d_id)','smestaj(naziv,adresa,kapacitet,br_zvezdica,g_id)','sobatip_hash(tip,br_kreveta,gen_cena,opis)','prevoz(tip,ime_komp,cena)','soba(smestaj_id,tip)','aranzmani(naziv,krece,vraca,smestaj_id,p_id)','aktivnosti(naziv)','akt_u_gradu(g_id,akt_id,smestaj_id)','ima_aktivnost(aran_id,akt_id)','rezervacije(ime,prezime,br_kartice,email,broj_odr,broj_dece,cena,kom,kontakt,aran_id, broj_soba)']
         inserts = list(dataTrimming())
-        for i,table in enumerate(tables):
+        for i, table in enumerate(tables):
             vals = paramValuesGenerator(table)
-            PATTERN = f"INSERT INTO {table} VALUES({vals})" 
-            #self.Exec(PATTERN,)
-            self.Exec(PATTERN,inserts[i])
+            PATTERN = f"INSERT INTO {table} VALUES({vals})"
+            # Debug print
+            print(f"\nTable: {table}")
+            print(f"Pattern: {PATTERN}")
+            print(f"First row of data: {inserts[i][0] if len(inserts[i]) > 0 else 'No data'}")
+            self.Exec(PATTERN, inserts[i])
 
         self.insertSobaSlike()
         self.insertGradSlike()
@@ -98,8 +113,8 @@ class Populator(object):
     
     
     def insertSobaSlike(self):
-        num = len(pd.read_csv(PATH_DATA+"sobe.csv").index)+1  #broj soba
-        path = "slike_travel\\"
+        num = len(pd.read_csv(os.path.join(PATH_DATA, "sobe.csv")).index) + 1
+        path = os.path.join(PATH_IMAGES_TRAVEL, "slike_travel\\")
         #format slike -> {tip}-{br-k}bed-{koja_po_redu}.jpg
         #prvo iter do 3 i insert za trenutni ID posle id+=1
         tp=1
@@ -107,20 +122,20 @@ class Populator(object):
         while tp<=num//4:
             for y in range(1,5):
                 for z in range(1,4):
-                    photo = path + f"{tp}-{y}beds-{z}.jpg".format(tp=tp,y=z,z=z)
+                    photo = os.path.join(path, f"{tp}-{y}beds-{z}.jpg")
                     self.insertBLOB(x,photo)
                 x+=1
             tp+=1
             
             
     def insertGradSlike(self):
-        gradovi = pd.read_csv(PATH_DATA+"gradovi.csv")
+        gradovi = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv"))
         imena = gradovi['naziv'].values
         id = list(range(1,len(gradovi.index)+1))
         idG=1
         for ime in imena:
             ime=ime.replace(' ','_')
-            path = "slikeGradova/"+ime+"_city_center/Image_1.jpg"
+            path = os.path.join(PATH_IMAGES_CITIES, f"{ime}_city_center", "Image_1.jpg")
 
             if os.path.exists(path):
                 self.insertBLOB(idG,path,where="grad_ima_sliku",param="grad_id")

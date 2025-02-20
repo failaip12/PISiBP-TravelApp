@@ -14,12 +14,12 @@ import translators.server as tss
 from bing_image_downloader import downloader
 from googletrans import Translator
 from srtools import cyrillic_to_latin
+from config import PATH_DATA, API_FILE, PATH_PLOTS
 
 api_key = ''
-with open('pydata/api.txt') as f:
+with open(API_FILE) as f:
     api_key = f.readlines()[0]
 client = OpenAI(api_key=api_key)
-PATH_DATA = "pydata/py_csv/"
     # Svaki hotel approx 250 soba->standardna distribucija generate random da bude mean 250 i ukupno ~60000 oglasa, znaci->broj soba ~250 na 240hotela
 global fr
 global to
@@ -34,12 +34,12 @@ TYPE = {
 }
 
 def dodajRandomGrad(y):
-    x = pd.read_csv(PATH_DATA+"gradovi.csv")
+    x = pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv"))
     return random.choice(range(1,len(x.index)+1))
 
 
 def dodajRandomAktivnost(y):
-    x = pd.read_csv(PATH_DATA+"aktivnosti.csv")
+    x = pd.read_csv(os.path.join(PATH_DATA, "aktivnosti.csv"))
     return random.choice(range(1,len(x.index)+1))
 #TYPE SADRZI OPIS I 
 # MULTIPLIERE ZA CENE SOBA
@@ -102,12 +102,12 @@ def hotelGPT(place):
     top_p=1,
     frequency_penalty=0.0,
     presence_penalty=0.6,)
-    h_list = response.choices[0]["text"].split("\n")
+    h_list = response.choices[0].text.split("\n")
     
     #REGEX TO THE RESCUE
     h_list = [re.sub(rgx, '', x).replace(' ','',1) for x in h_list if x!='']
     h_list = [x for x in h_list if x!='' and len(x)!=1]
-    time.sleep(2)   #greedy OpenAI dozvoljava samo 60 entry-ja po minutu tako da procesor mora da odmori malo!!!
+    #time.sleep(2)   #greedy OpenAI dozvoljava samo 60 entry-ja po minutu tako da procesor mora da odmori malo!!!
     return h_list
 
 #setGPT("Šangaj")
@@ -123,7 +123,7 @@ def companyGPT():
     frequency_penalty=0.0,
     presence_penalty=0.8,)
     rgx = '[^a-zA-Z ]+'
-    h_list = response.choices[0]["text"].split("\n")
+    h_list = response.choices[0].text.split("\n")
     h_list = [re.sub(rgx, '', x).replace(' ','',1) for x in h_list if x!='']
     h_list = [x for x in h_list if x!='' and len(x)!=1]
     return h_list
@@ -171,7 +171,7 @@ def plotTools(case,what,
     plt.title(title)
     plt.xlabel(x)
     plt.ylabel(y)
-    plt.savefig('pydata/pyplots/'+path)
+    plt.savefig(os.path.join(PATH_PLOTS,path))
     plt.cla()
     plt.clf()
     
@@ -181,7 +181,7 @@ def paramValuesGenerator(s):
     
 def trimPonude():
     #aranzman(aran_id,naziv,krece,vraca,nap,smestaj_id,p_id)
-    aranzman = pd.read_csv(PATH_DATA+"aranzmani.csv")
+    aranzman = pd.read_csv(os.path.join(PATH_DATA, "aranzmani.csv"))
     filteredCopy = pd.DataFrame()
     filteredCopy['naziv'] = aranzman['ime']
     filteredCopy['krece'] = aranzman['datum_pocetka']
@@ -206,22 +206,22 @@ def dataTrimming():
     
     
     
-    kontinenti = pd.read_csv(PATH_DATA+'gradovi.csv').kontinent.unique()   #DONE
-    drzave = pd.read_csv(PATH_DATA+'gradovi.csv').drop_duplicates(subset = 'drzava').drop(columns=['naziv'] ,axis=1)
+    kontinenti = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv')).kontinent.unique()   #DONE
+    drzave = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv')).drop_duplicates(subset = 'drzava').drop(columns=['naziv'] ,axis=1)
     drzave['kontinent']=drzave['kontinent'].apply(lambda x :switchToKey(kontinenti,None,x))#DONE
     drzave.reset_index(drop=True,inplace=True)
     
-    gradovi = pd.read_csv(PATH_DATA+'gradovi.csv').drop(columns=['kontinent'],axis=1)
+    gradovi = pd.read_csv(os.path.join(PATH_DATA, 'gradovi.csv')).drop(columns=['kontinent'],axis=1)
     gradovi['drzava'] = gradovi['drzava'].apply(lambda x :switchToKey(drzave,'drzava',x))            #DONE
     
-    hoteli = pd.read_csv(PATH_DATA+'hoteli.csv')
+    hoteli = pd.read_csv(os.path.join(PATH_DATA, 'hoteli.csv'))
     hoteli['grad'] = hoteli['grad'].apply(lambda x:switchToKey(gradovi,'naziv',x))
     
-    sobe = pd.read_csv(PATH_DATA+"sobe.csv")
+    sobe = pd.read_csv(os.path.join(PATH_DATA, "sobe.csv"))
     hoteli = hoteli.iloc[:,[0,4,3,2,1]]
     sobe = sobe.iloc[:,[0,1,3,2]]
     
-    prevoz = pd.read_csv(PATH_DATA+'prevoz.csv')
+    prevoz = pd.read_csv(os.path.join(PATH_DATA, 'prevoz.csv'))
     
     
     np.set_printoptions(threshold=sys.maxsize)
@@ -238,14 +238,14 @@ def dataTrimming():
     kmb = pd.DataFrame(komb,columns=["h_id","s_id"])
     kmb = kmb.loc[kmb.index!=0]
     kmb=kmb.reset_index(drop=True)
-    kmb.to_csv(PATH_DATA+"combinations.csv",index=None)
+    kmb.to_csv(os.path.join(PATH_DATA, "combinations.csv"),index=None)
     kmb["h_id"],kmb["s_id"]  = kmb["h_id"].astype(str),kmb["s_id"].astype(str)
-    rez = pd.read_csv(PATH_DATA+"rand_rez.csv")
+    rez = pd.read_csv(os.path.join(PATH_DATA, "rand_rez.csv"))
     aranzman = trimPonude()
-    aktivnosti = pd.read_csv(PATH_DATA+"aktivnosti.csv")
-    akt_u_gradu = pd.read_csv(PATH_DATA+"aktivnosti_u_gradu.csv")
+    aktivnosti = pd.read_csv(os.path.join(PATH_DATA, "aktivnosti.csv"))
+    akt_u_gradu = pd.read_csv(os.path.join(PATH_DATA, "aktivnosti_u_gradu.csv"))
     akt_u_gradu['g_id'],akt_u_gradu['akt_id'],akt_u_gradu['smestaj_id'] = akt_u_gradu['g_id'].astype(str),akt_u_gradu['akt_id'].astype(str),akt_u_gradu['smestaj_id'].astype(str)
-    akt_aran = pd.read_csv(PATH_DATA+"ima_aktivnost.csv")
+    akt_aran = pd.read_csv(os.path.join(PATH_DATA, "ima_aktivnost.csv"))
     akt_aran['aran_id'],akt_aran['akt_id'] = akt_aran['aran_id'].astype(str),akt_aran['akt_id'].astype(str)
     return kontinenti,drzave,gradovi,hoteli,sobe,prevoz,kmb,aranzman,aktivnosti,akt_u_gradu,akt_aran,rez
     #return kontinenti,drzave,gradovi,hoteli,sobe
@@ -261,4 +261,4 @@ def downloadCityImages(items):
 #print(hotelGPT("Liege"))
 
 
-#downloadCityImages(pd.read_csv(PATH_DATA+"gradovi.csv")['naziv'].values)
+#downloadCityImages(pd.read_csv(os.path.join(PATH_DATA, "gradovi.csv")[')naziv'].values)
