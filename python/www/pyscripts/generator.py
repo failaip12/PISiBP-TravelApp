@@ -3,6 +3,12 @@ import os
 import random
 import string
 import time
+import concurrent.futures
+from concurrent.futures import ThreadPoolExecutor
+import functools
+from pathlib import Path
+import pickle
+from tqdm import tqdm
 
 import matplotlib.pyplot as plt
 import mysql.connector
@@ -12,14 +18,12 @@ import requests
 from bs4 import BeautifulSoup
 from faker import Faker
 from mysql.connector import Error  # OBRISI PRAZNA POLJA
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import Select
+from playwright.sync_api import sync_playwright
 from utils import (BED_NUM, TYPE, companyGPT, dodajRandomAktivnost,
                    dodajRandomGrad, hotelGPT, plotTools, roundStars,
                    translateElement)
 from config import PATH_DATA
+from tenacity import retry, stop_after_attempt, wait_exponential
 
 """
     
@@ -32,19 +36,21 @@ link = 'https://www.worldometers.info/geography/7-continents/'
 
 def getDriver():#na kraju prevesti celokupni df
     
-    browser = webdriver.Chrome()
-    return browser
+    playwright = sync_playwright().start()
+    browser = playwright.chromium.launch()
+    page = browser.new_page()
+    return page, browser, playwright
 
 def getContinents():
     
     kontinenti = pd.DataFrame(columns = ['naziv'])
     
     
-    browser = getDriver()
+    page, browser, playwright = getDriver()
     global link
-    browser.get(link)
-    time.sleep(2)
-    content = browser.page_source
+    page.goto(link)
+    page.wait_for_timeout(2000)
+    content = page.content()
     soup = BeautifulSoup(content,features="lxml")
     names = []
     for a in soup.find_all('table', attrs={'class':'table'}):
@@ -54,12 +60,14 @@ def getContinents():
         #continents.append(cyrillic_to_latin(tss.google(name, fr, to)))
             kontinenti.loc[len(kontinenti.index)] = name
 
+    browser.close()
+    playwright.stop()
     return kontinenti
     
 def getContinentsAndCountries():    
     global link
     kontinenti = getContinents()
-    browser = getDriver()
+    page, browser, playwright = getDriver()
     
     drzave = pd.DataFrame(columns = ['naziv','kontinent'])
 
@@ -67,9 +75,9 @@ def getContinentsAndCountries():
         temp = name.replace(" ","-")
         newlink = link + '/'+name.lower().replace(' ','-')+'/'
 
-        browser.get(newlink)
-        time.sleep(2)
-        content = browser.page_source
+        page.goto(newlink)
+        page.wait_for_timeout(2000)
+        content = page.content()
         soup = BeautifulSoup(content,features="lxml")
         for a in soup.find_all('table', attrs={'class':'table'}):
             howmuch = 15 if name == 'Europe' else 3                                               #koliko drzava po kontinentu?
@@ -82,40 +90,79 @@ def getContinentsAndCountries():
                     
                     drzave.loc[len(drzave.index)] = [country.text,kontinenti.loc[kontinenti['naziv']==name,'naziv'].values[0]]
                     howmuch-=1
+    browser.close()
+    playwright.stop()
     return kontinenti,drzave
     
     
-def getAllGeography():
+def get_city_data(args):
+    name, drzave, newlink = args
+    page, browser, playwright = getDriver()
+    city_data = []
     
-    kontinenti,drzave = getContinentsAndCountries()
-    
-    newlink = 'https://worldpopulationreview.com/countries/cities/'
-    
-    browser = getDriver()    
-    gradovi = pd.DataFrame(columns = ['naziv','drzava','kontinent'])
-    for name in drzave['naziv'].values:
+    try:
         clink = newlink + name.lower().replace(' ','-')
-
-        browser.get(clink)
-        time.sleep(3)
-        content = browser.page_source
+        page.goto(clink)
+        page.wait_for_timeout(1000)  # Reduced wait time
+        content = page.content()
         
-        soup = BeautifulSoup(content,features="lxml")
-        #try:
-        #    browser.find_element(By.CLASS_NAME('_3p_1XEZR')).submit()
-        #except:
-        #    pass
+        soup = BeautifulSoup(content, features="lxml")
         for a in soup.find_all('table', attrs={'class':'wpr-table'}):
             howmuch = 5 if drzave.loc[drzave["naziv"]==name,"kontinent"].values[0] == 'Europe' else 5              
             for city in a.find_all('th')[2:]:
-
                 if not howmuch:
                     break
-                
                 if all(x.isalpha() or x.isspace() for x in city.text):
-                    gradovi.loc[len(gradovi.index)] = [city.text,drzave.loc[drzave['naziv']==name,'naziv'].values[0],drzave.loc[drzave['naziv']==name,'kontinent'].values[0]]
+                    city_data.append([
+                        city.text,
+                        drzave.loc[drzave['naziv']==name,'naziv'].values[0],
+                        drzave.loc[drzave['naziv']==name,'kontinent'].values[0]
+                    ])
                     howmuch-=1
-                    
+    finally:
+        browser.close()
+        playwright.stop()
+    
+    return city_data
+
+def cache_to_disk(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        cache_dir = Path(PATH_DATA) / ".cache"
+        cache_dir.mkdir(exist_ok=True)
+        cache_file = cache_dir / f"{func.__name__}.pkl"
+        
+        if cache_file.exists():
+            with open(cache_file, 'rb') as f:
+                return pickle.load(f)
+        
+        result = func(*args, **kwargs)
+        
+        with open(cache_file, 'wb') as f:
+            pickle.dump(result, f)
+        
+        return result
+    return wrapper
+
+@cache_to_disk
+def getAllGeography():
+    kontinenti, drzave = getContinentsAndCountries()
+    newlink = 'https://worldpopulationreview.com/countries/cities/'
+    
+    # Prepare arguments for parallel processing
+    args_list = [(name, drzave, newlink) for name in drzave['naziv'].values]
+    
+    gradovi = pd.DataFrame(columns=['naziv','drzava','kontinent'])
+    
+    # Use ThreadPoolExecutor for parallel processing
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        results = list(executor.map(get_city_data, args_list))
+    
+    # Flatten results and add to DataFrame
+    for city_data in results:
+        for city_info in city_data:
+            gradovi.loc[len(gradovi.index)] = city_info
+    
     gradovi.to_csv(os.path.join(PATH_DATA, 'cities.csv'),index=None)
     
     
@@ -223,6 +270,10 @@ def generatePrevoznik():
     
     
     
+def batch_process(df, batch_size=1000):
+    for i in range(0, len(df), batch_size):
+        yield df.iloc[i:i + batch_size]
+
 def generatePonude():
     """
     aranzman(aran_id,naziv,krece,vraca,nap,smestaj_id,p_id)
@@ -291,8 +342,14 @@ def generatePonude():
     aranzman['m_str'] = aranzman['datum_pocetka'].dt.strftime('%')
     #hoteli.loc[hoteli['naziv']==aranzman['naziv'],"grad"].values() + 
     aranzman['ime'] = aranzman['grad'] + " " + aranzman['mpr'] + " "+ aranzman['godina'] + " " + aranzman['naziv'] + " " + aranzman['prevod']+ " " + aranzman['broj_dana'] + " dana"
-    aranzman.to_csv(os.path.join(PATH_DATA, "aranzmani.csv"),index=None)
     
+    # Process in batches
+    for batch in batch_process(aranzman):
+        batch.to_csv(os.path.join(PATH_DATA, "aranzmani.csv"), 
+                    mode='a', 
+                    header=(not os.path.exists(os.path.join(PATH_DATA, "aranzmani.csv"))),
+                    index=None)
+
 def generateAktivnosti():
     df = pd.DataFrame(columns = ["naziv"])
     
@@ -333,37 +390,63 @@ def generateImaAktivnost():
     
 
 def generateRandomRezervacije(n):
-    #ime prezime	br_kartice	email	broj_odr	broj_dece	cena	kom	kontakt	aran_id	korisnik_id	
     faker = Faker()
-    rez = pd.DataFrame(columns=['ime','prezime','br_kartice','email','broj_odr','broj_dece','cena','kom','kontakt','aran_id', 'broj_soba'])
     
-    rez['ime'] = [faker.name().split(" ")[0] for _ in range(n)]
-    rez['prezime'] = [faker.name().split(" ")[1] for _ in range(n)]
-    rez['br_kartice'] = [''.join(random.choices(string.ascii_lowercase, k=8)) for _ in range(n)]
-    rez['email'] = [faker.name().split(" ")[1]+"@gmail.com" for _ in range(n)]
-    rez['broj_odr'] = [random.randint(0,3) for _ in range(n)]
-    rez['broj_dece'] = [random.randint(0,3) for _ in range(n)]
-    rez['cena'] = [random.randint(100,500) for _ in range(n)]
-    rez['kom'] = [random.randint(1,5) for _ in range(n)]
-    rez['kontakt'] = [''.join(random.choices(string.ascii_lowercase, k=10)) for _ in range(n)]
-    rez['aran_id'] = [random.randint(1,50000) for _ in range(n)]
-    rez['broj_soba'] = [random.randint(1,5) for _ in range(n)]
+    # Create data in bulk instead of list comprehension
+    rez = pd.DataFrame({
+        'ime': pd.Series([faker.first_name() for _ in range(n)]),
+        'prezime': pd.Series([faker.last_name() for _ in range(n)]),
+        'br_kartice': pd.Series([''.join(random.choices(string.ascii_lowercase, k=8)) for _ in range(n)]),
+        'email': pd.Series([f"{faker.last_name()}@gmail.com" for _ in range(n)]),
+        'broj_odr': pd.Series(np.random.randint(0, 4, n)),
+        'broj_dece': pd.Series(np.random.randint(0, 4, n)),
+        'cena': pd.Series(np.random.randint(100, 501, n)),
+        'kom': pd.Series(np.random.randint(1, 6, n)),
+        'kontakt': pd.Series([''.join(random.choices(string.ascii_lowercase, k=10)) for _ in range(n)]),
+        'aran_id': pd.Series(np.random.randint(1, 50001, n)),
+        'broj_soba': pd.Series(np.random.randint(1, 6, n))
+    })
     
-    rez.to_csv(os.path.join(PATH_DATA, "rand_rez.csv"),index=None)
+    rez.to_csv(os.path.join(PATH_DATA, "rand_rez.csv"), index=None)
+
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+def get_page_content(page, url):
+    page.goto(url)
+    page.wait_for_timeout(1000)
+    return page.content()
 
 def generator():
-    getAllDFs()
-    hotelStarsDistribution()
-    generateRooms()
-    hotelGenerateAddress()
-    sobaParamGen()
-    PlotGeneratedInfos()
-    generatePrevoznik()
-    generatePonude()
-    generateAktivnosti()        
-    smestajImaAktivnost()
-    generateImaAktivnost()
-    generateRandomRezervacije(150)
+    print("Starting data generation...")
+    with tqdm(total=9, desc="Generating data") as pbar:
+        getAllDFs()
+        pbar.update(1)
+        
+        hotelStarsDistribution()
+        pbar.update(1)
+        
+        generateRooms()
+        pbar.update(1)
+        
+        hotelGenerateAddress()
+        pbar.update(1)
+        
+        sobaParamGen()
+        PlotGeneratedInfos()
+        pbar.update(1)
+        
+        generatePrevoznik()
+        generatePonude()
+        pbar.update(1)
+        
+        generateAktivnosti()        
+        pbar.update(1)
+        
+        smestajImaAktivnost()
+        pbar.update(1)
+        
+        generateImaAktivnost()
+        generateRandomRezervacije(150)
+        pbar.update(1)
 
 
 start = time.time()

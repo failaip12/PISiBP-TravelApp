@@ -1,436 +1,436 @@
 naziv,grad,zvezdice,br_soba,adresa
-Zlatna palma ,Mumbaj,3.5,301,45511 Colleen Freeway
-Oaza mira ,Mumbaj,3.5,234,59145 Ortega Mountain
-Tihi biser,Mumbaj,4.5,611,054 Huynh Roads
-Sunset Oasis Hotel,Delhi,3.5,240,"PSC 5818, Box"
-Royal Emerald Retreat,Delhi,3.5,272,USNV Horton
-Serenity Heights Resort,Delhi,4.5,516,7191 Jerry Crossing
-Oaza mira,Bengaluru,3.0,157,1978 Bradley Forks
-Zeleni raj,Bengaluru,3.0,181,93545 Hanson Lights
-Kraljevsko utočište,Bengaluru,3.5,279,USS Carson
-Royal Lotus Retreat,Kolkata,3.5,234,"PSC 6061, Box"
-Sunrise Paradise Inn,Kolkata,3.0,136,"PSC 7317, Box"
-Majestic Garden Resort,Kolkata,3.5,245,78066 Brian Bypass
-Beli Zamak,Čenaj,3.5,231,82050 William Rapid
-Palmov Raj,Čenaj,4.0,360,16475 Cook Bridge
-Sunčeva Oaza,Čenaj,3.0,100,44794 Kennedy Pass
-Kraljevski Konak,Šangaj,3.0,172,70724 Cunningham Hill
-Zlatno Sunce,Šangaj,4.0,415,2233 Joseph Port
-Beli Oblak,Šangaj,4.5,546,8731 Brown Hill
-Zlatni zmaj hotel,Peking,3.0,112,98065 Peterson Parkway
-Vrtovi Tiananmena hotel,Peking,4.0,364,89324 Mann Viaduct
-Palača kineske svile hotel,Peking,3.0,151,8506 Matthew Ports
-Zlatna Oaza,Tianjin,3.0,161,35827 Roberta Cove
-Laguna Horizont,Tianjin,3.0,160,54553 Anthony Mills
-Ponosni Nebeski Toranj,Tianjin,3.5,226,1803 Sarah Burg
-Zlatni zmaj hotel,Guangdžou,4.0,400,76854 Travis Causeway
-Parnas palata hotel,Guangdžou,4.0,371,52065 Justin Union
-Vrtovi svile hotel,Guangdžou,3.5,268,37128 Jones Path
-Emerald Cove Hotel,Šenžen,3.5,231,21074 Kelly Estates
-Azure Sky Resort,Šenžen,3.5,263,7608 Julie Oval
-Golden Sands Retreat,Šenžen,3.5,253,508 Huffman Mission
-Oaza Smaragd,Džakarta,4.0,379,637 Mcgrath Trail
-Palme Deluxe,Džakarta,3.0,178,969 Torres Locks
-Tiranija Kraljeva,Džakarta,3.5,262,064 Patterson Pines
-Oasis Escape Hotel,Surabaia,3.5,254,37540 Vaughn Port
-Azure Haven Resort,Surabaia,3.5,258,6585 Lee Greens
-Serenity Sunset Retreat,Surabaia,3.5,284,363 Susan Expressway
-Brzoskidajući zmajevi,Medan,3.5,280,93441 Gwendolyn Valley
-Tropska oaza,Medan,4.0,433,12185 Martin Port
-Lotosova palata,Medan,3.5,255,USS Cunningham
-Zeleni bregovi,Bandung,4.5,513,094 Sanchez Inlet
-Serenity Cove,Bandung,3.5,236,62143 Williamson Locks
-Oaza odmora,Bandung,3.5,221,5611 Rogers Point
-Radin Hotel,Bekasi,3.5,271,69292 Walton Mall
-Ocean View Resort,Bekasi,3.5,294,838 Timothy Route
-Diamond Palace Inn,Bekasi,3.5,286,818 Richard Plains
-The Oasis Retreat,Lagos,4.0,429,088 Carroll Ferry
-Sunset Serenity Hotel,Lagos,4.0,414,14402 Burgess Heights
-Coastal Breeze Resort,Lagos,3.5,306,704 Rasmussen Row
-Zlatna oaza,Kano,3.5,233,299 Tim Centers
-Luna luksuz,Kano,3.5,254,990 Harvey Meadows
-Mirna reka,Kano,4.0,441,148 Salazar Rue
-Oaza mira,Ibadan,3.5,282,834 Bonnie Ports
-Sunčana obala,Ibadan,3.0,127,7102 Booth Tunnel
-Zlatni vrh,Ibadan,3.0,173,831 Angela Green
-Pustolovni sokak hotel,Kaduna,3.0,182,52722 Christine Landing
-Zlatni oreol hotel,Kaduna,4.0,415,541 Jessica Plain
-Tropska oaza hotel,Kaduna,3.5,253,153 Romero Haven
-Tropical Oasis Retreat,Port Harcourt,4.5,592,48221 Katie Harbor
-Riverside Serenity Resort,Port Harcourt,4.0,366,163 Hernandez Path
-Harbour View Hideaway,Port Harcourt,3.5,273,03931 Lopez Burg
-Oasis Retreat Hotel,Adis Abeba,3.5,224,480 James Overpass
-Royal Palm Lodge,Adis Abeba,4.0,397,41858 Christopher Square
-Serenity Suites,Adis Abeba,3.5,241,4873 Benjamin Grove
-Oaza na arobnom putu ,Dire Dava,3.0,163,1422 Sarah Oval
-Planinska avantura ,Dire Dava,4.0,357,USS Martin
-Mesto za odmor i relaksaciju,Dire Dava,3.5,264,1971 Abigail Square
-Oaza Sunca,Nazret,4.0,419,2327 Hernandez Hills
-Plava Laguna,Nazret,3.5,256,8829 West Tunnel
-Zeleni Vrt,Nazret,3.0,11,42744 Robert Extensions
-Bela Vista Hotel,Bahir Dar,4.0,379,USNV Mcfarland
-Oasis Retreat,Bahir Dar,3.0,84,02084 Daniel Glen
-Nile Escape Resort,Bahir Dar,4.5,511,"PSC 7513, Box"
-Zlatni dvor,Gondar,4.5,542,17327 Andrew Landing
-Sunčani raj,Gondar,3.5,225,089 Stephens Street
-Kraljevski odmor,Gondar,3.0,138,50635 Brown Islands
-Oaza mira,Kairo,3.0,120,3929 Rowland Lodge
-Palata Sjajnih zvezda,Kairo,4.0,387,17396 Rachel Rapids
-Skriveni biser,Kairo,3.5,245,7529 Joshua Overpass
-Beli koral,Aleksandrija,3.0,180,48932 Schwartz Corner
-Ptičije gnijezdo,Aleksandrija,3.5,241,99093 Cameron Crossing
-Oaza mira,Aleksandrija,4.5,572,153 Dean Roads
-Oaza vetrova,Giza,3.5,293,3562 Gary Views
-Zlatna piramida,Giza,4.0,375,31238 Armstrong Crest
-Sfingaški biser,Giza,4.0,378,414 Arroyo Pines
-Plava laguna hotel,Port Said,4.0,402,88830 Barnes Plains
-Oaza palmi resort,Port Said,4.0,406,133 Johnson Ways
-Sunčani zaliv palace,Port Said,3.0,172,815 Colin Plaza
-Oaza mira,Suec,3.5,244,1359 Nelson Valleys
-Palmov cvet,Suec,3.0,168,243 Jacqueline Forges
-Modri zaliv,Suec,3.0,172,"PSC 7990, Box"
-Sjajne zvezde,Moskva,4.0,414,2779 Brown Greens
-Kraljevski dvor,Moskva,3.0,187,1251 Tracey Mountain
-Biseri Kremlja,Moskva,3.5,256,65763 Steven Rapids
-Sunčani raj,Sankt Peterburg,3.0,173,616 Knight Junctions
-Bela lađa,Sankt Peterburg,3.0,180,0954 Samantha Freeway
-Zlatni dvorac,Sankt Peterburg,4.0,379,0526 Erica Cape
-Zlatni Lotos,Novosibirsk,3.5,224,868 Davis Viaduct
-Grand Palačinka,Novosibirsk,3.5,220,47351 Abbott Rapid
-Oaza Panorama,Novosibirsk,3.5,306,USS Scott
-Zlatni Oblak,Jekaterinburg,4.0,350,01587 Brown Street
-arobni Kutak,Jekaterinburg,4.0,379,4568 Kim Mountains
-Sunčana Oaza,Jekaterinburg,3.5,277,7913 Krystal Walk
-Zlatni Zmaj,Nižnji Novgorod,3.0,93,0867 Nelson Viaduct
-Plavi Dunav,Nižnji Novgorod,4.0,363,304 Andrew Underpass
-Palata Grada,Nižnji Novgorod,3.5,306,308 Susan Orchard
-Zimmermann Oaza,Berlin,4.0,402,0701 Nguyen Divide
-Srebrna Terasa,Berlin,3.0,162,01884 Gardner Plains
-Grne Retreat,Berlin,5.0,690,41663 Hamilton Islands
-Piratski zaliv,Hamburg,3.0,133,19265 James Stravenue
-Belvedere vrtovi,Hamburg,4.0,373,77704 Zavala Burgs
-Elysium tajna,Hamburg,3.5,267,9495 Jessica Views
-Bavarski salonski dvorac,Minhen,3.5,220,9984 Johnson Dale
-Zlatna alpska vila,Minhen,4.0,382,32220 Patrick Mountain
-Kraljevska bavarska palata,Minhen,3.5,238,Unit 6218 Box
-Haus am Dom,Koeln,3.0,50,572 Myers Islands
-Goldener Greif,Koeln,3.0,137,01263 Gonzalez Union
-Kaiserhof Residenz,Koeln,3.5,303,35417 Jones Loaf
-Sunčani zalazak,Frankfurt na Majni,4.5,589,39993 Fernandez Spring
-Raj na Majni,Frankfurt na Majni,3.0,114,37896 Sandoval Common
-Zlatna kula,Frankfurt na Majni,3.5,261,851 Samuel Meadows
-The Royal Rose Hotel,London,4.0,445,446 Brittney Views
-The Velvet Sky Boutique Hotel,London,4.0,361,74789 Noah Ford
-The Secret Garden Retreat,London,3.5,230,788 Horton Mill
-Oaza odmora,Birmingem,3.0,118,09703 Bell Square
-Grand Palais,Birmingem,3.0,91,193 Teresa Skyway
-Sunčani breg,Birmingem,3.0,169,58055 James Parkway
-Riverside Retreat,Liverpul,3.5,230,7831 English Parkway
-Evergreen Oasis,Liverpul,3.0,56,08183 Owens Burgs
-Harbor View Inn,Liverpul,3.0,98,743 Thomas Manors
-Zamkova Oaza,Notingem,3.5,289,89921 Mcclure Mountain
-Viktorska Avantura,Notingem,3.5,227,297 Wanda Estates
-Zeleni Vrtovi,Notingem,3.0,168,Unit 8890 Box
-Sunset Retreat,Šefild,3.5,227,8778 Miller Shoals
-Hilltop Haven,Šefild,3.0,164,USS Crosby
-Riverside Oasis,Šefild,4.0,393,517 Mary Station
-Le Jardin de Paris,Pariz,4.5,522,226 Daniel Views
-La Belle toile,Pariz,4.5,571,3118 Walters Station
-Les Charmes du Quartier,Pariz,4.0,371,164 Peter Canyon
-Belle Vue Riviera Hotel,Marsej,4.0,375,004 Cannon Lodge
-Exotica Retreat  Spa,Marsej,4.0,446,0563 Brock Cliff
-La Plage Elegance Resort,Marsej,4.5,533,5700 Adam Valley
-Biserni zaliv,Lion,4.0,447,761 Michael Parks
-Zlatna obala,Lion,4.0,421,24910 Jake Street
-Skrivena oaza,Lion,3.0,177,USS Porter
-Le Grand Palace,Tuluz,3.0,105,532 Alyssa Fords
-La Belle Vue,Tuluz,4.0,388,818 Donald Port
-LOasis du Midi,Tuluz,3.5,254,708 Mendoza Expressway
-Vila Miris Ljiljana,Lep,3.5,258,30896 Salinas Shore
-Oaza Tišine i Harmonije,Lep,3.0,158,85757 Roger Keys
-Sunčani Raj na Bregu,Lep,3.0,127,0124 Fuller Viaduct
-Bela Vista,Rim,4.0,440,"PSC 3021, Box"
-Palazzo dei Fiori,Rim,3.5,303,"PSC 4726, Box"
-La Dolce Vita,Rim,3.0,145,Unit 8090 Box
-Villa Paradiso,Milan,3.5,297,42321 Waters Locks
-Il Giardino Segreto,Milan,3.5,289,90890 Jack Mountains
-LOasi del Mare,Milan,4.0,352,3191 Stephanie Streets
-La Perla di Napoli,Napulj,4.5,589,804 Solis Squares
-Vesuvio Sanctuary Hotel,Napulj,3.5,259,307 Robinson Garden
-Mare e Terra Retreat,Napulj,3.0,129,3088 Byrd Ferry
-Kraljevska palata,Torino,3.5,266,148 Copeland Centers
-Biserno jezero,Torino,3.0,177,5388 Smith River
-Luksuzni trg,Torino,4.0,355,748 Diana Ranch
-Sunčani vrtovi,Palermo,3.5,281,1767 Mckee Throughway
-Oaze mora,Palermo,3.5,293,120 Katherine Forges
-Beli zaliv,Palermo,3.0,182,41433 Michael Lodge
-Plaza del Sol,Madrid,3.5,299,5448 Harmon Roads
-El Cortijo Real,Madrid,3.0,187,Unit 4855 Box
-Los Jardines del Prado,Madrid,4.0,352,62722 Johnathan Extensions
-La Costa del Sol,Barselona,3.5,236,22802 Strong Pass
-La Luna de Barcelona,Barselona,3.0,141,19236 Craig Views
-El Olivo Boutique Hotel,Barselona,3.5,306,5881 Robertson Wells
-Mediterranean Bay Resort,Valensija,3.0,172,846 Downs Heights
-Sunset Paradise Inn,Valensija,4.0,444,6961 Hughes Mill
-Azure Retreat  Spa,Valensija,3.5,301,736 Davis Ports
-El Encanto de Andalucia,Sevilja,3.5,303,Unit 3740 Box
-Oasis del Guadalquivir,Sevilja,3.5,271,11054 Little Viaduct
-La Perla de Triana,Sevilja,3.5,257,805 Daisy Oval
-Oaza mira,Saragosa,3.0,46,18534 Renee Street
-Plavi biser,Saragosa,4.0,422,60476 Timothy Mountains
-Sunčana dolina,Saragosa,3.0,164,29955 Wayne Square
-Blue Horizon Hotel,Varšava,4.0,396,605 Matthews Islands
-Serenity Suites,Varšava,3.0,177,471 Taylor Camp
-Marble Palace Inn,Varšava,3.5,250,20638 Zachary Crest
-Zeleni Breg,Lodz,3.5,243,29323 Robertson Land
-Nebeski odmor,Lodz,3.0,147,478 Brooks Port
-Kraljevski dvorac,Lodz,3.5,247,0207 Hobbs Cape
-Carpe Diem Palace,Krakov,3.5,304,USCGC Ware
-Royal Sanctuary Retreat,Krakov,3.5,226,856 Kaitlyn Shoal
-Polaris Grand Resort,Krakov,3.0,130,3216 John Hill
-Sunflower Inn,Vroclav,3.0,182,9695 Sweeney Divide
-Rivers Edge Retreat,Vroclav,3.5,284,920 Vance Grove
-Golden Willow Lodge,Vroclav,4.0,415,0861 Hailey Centers
-Zlatna Palata,Poznanj,4.0,384,74444 Christopher Prairie
-Kraljevska Oaza,Poznanj,3.5,288,82396 Davis Valley
-Pozorišni Hram,Poznanj,3.0,150,65373 Megan Parkway
-Zlatni mir,Kijev,4.0,391,372 Morrison Neck
-Sunčeva oaza,Kijev,3.5,265,49745 Katherine Harbor
-Palata snova,Kijev,3.5,242,825 Kyle Crescent
-Zlatni vrhovi,Harkov,4.0,391,8616 Martinez Springs
-Povetarac nad Dnjeprom,Harkov,4.0,362,1875 Brown Avenue
-Oaza mira i opuštanja,Harkov,3.5,306,841 Miller Crest
-Beli zamak,Dnjepar,3.0,139,014 Ruiz Loop
-Zlatni vrtovi,Dnjepar,3.0,179,066 Cannon Court
-Oaza mira,Dnjepar,3.0,97,28448 Jay Manor
-Oaza mira ,Donjeck,3.5,280,623 Peterson Center
-Zlatni raj ,Donjeck,3.5,265,"PSC 0826, Box"
-Biser jezera,Donjeck,4.0,393,850 King Walk
-Morska bajka,Odesa,3.5,281,USS Richardson
-Svetionik od mermera,Odesa,3.5,230,23724 John Trace
-Crni talas,Odesa,4.5,575,2960 Carey Motorway
-Sunflower Resort,Bukurešt,3.0,148,65938 Wheeler Corners
-Ivory Palace Hotel,Bukurešt,3.0,125,6587 Parker Glens
-Oasis Retreat,Bukurešt,3.0,179,4102 Robert Village
-Levantine Residence,Iasi,4.0,352,18740 Turner Canyon
-Majestic Palace,Iasi,3.5,232,7908 Steven Mountains
-The Velvet Retreat,Iasi,3.5,224,"PSC 1999, Box"
-Grand Oasis Hotel,Temišvar,3.0,141,62099 Johnson Stream
-Royal Elegance Resort,Temišvar,4.0,447,16193 Joseph Land
-Azure Paradise Retreat,Temišvar,3.0,178,Unit 6486 Box
-Vila San Giorgio,Craiova,3.0,144,983 Jonathan Lights
-Oaza Mira,Craiova,3.5,252,996 Ortega Wall
-Dvorac Anghelescu,Craiova,3.0,164,434 Gutierrez Isle
-Morski san,Constanta,3.5,242,720 Matthew Brook
-Oaza plaže,Constanta,4.0,434,321 Yolanda Trace
-Kraljevska vila,Constanta,3.5,223,72134 Nathan River
-The Tulip Oasis,Amsterdam,3.5,258,528 Claire Highway
-Canal View Retreat,Amsterdam,3.5,230,9794 Kimberly Walk
-Amsterdam Heights Hotel,Amsterdam,3.5,246,3298 Jacqueline Lodge
-Prijatni vrtovi,Roterdamski,4.0,382,4359 Valerie Forges
-Modri horizonti,Roterdamski,4.0,353,789 Rebecca Track
-Biser na reci,Roterdamski,3.5,233,5907 Brown Summit
-Luksor Palace,Hag,3.0,155,820 Nathan Trafficway
-Oaza Ocean View,Hag,3.5,251,56313 Evan Skyway
-Panoramic Peaks Resort,Hag,4.0,383,Unit 6289 Box
-Zlatna palma,Utreht,3.5,261,5194 Lauren Land
-Mir i tišina,Utreht,3.5,251,82435 Wyatt Rue
-Oaza odmora,Utreht,3.0,89,15988 Mcdaniel Row
-Sanjar,Ajndhoven,4.0,399,58092 Henderson Views
-Oaza mira,Ajndhoven,3.0,113,49103 Carpenter Streets
-Plavi zalazak,Ajndhoven,3.0,129,19107 Joseph Inlet
-Grand Royale,Brisel,3.5,230,1624 Richard Brooks
-Secret Garden Retreat,Brisel,3.5,266,682 Garcia Loop
-The Riverside Oasis,Brisel,3.5,266,51805 Phillips Station
-Grand Plaza,Antverpen,3.0,168,141 Thompson Vista
-Riviera Retreat,Antverpen,3.5,235,900 Edwards Track
-Harmony House,Antverpen,3.0,179,1243 Dawn Orchard
-LAmour du Nuit Hotel,Gent,3.0,89,69285 Williams Camp
-Le Jardin dOr Hotel,Gent,3.5,240,48656 Eaton Forks
-La Belle Epoque Inn,Gent,3.0,173,886 Kristin Spring
-Zlatni dvorac,Šarlroa,3.5,299,Unit 3901 Box
-Oaza mira,Šarlroa,3.5,250,4830 John Street
-Sunčani raj,Šarlroa,4.0,396,142 Johns Club
-Royal Oasis,Liege,4.0,370,4513 Joseph Trail
-The Grand Retreat,Liege,4.0,390,7914 Katherine Vista
-Belle Vue Escape,Liege,4.0,421,30600 Tamara Valley
-Nordic Oasis,Stokholm,4.0,369,Unit 7576 Box
-City Haven,Stokholm,3.5,248,43656 Kevin Station
-Royal Breeze,Stokholm,4.0,435,Unit 9891 Box
-Zlatni zaliv,Goeteborg,3.0,155,5717 Cannon Unions
-Mirisna bašta,Goeteborg,3.5,259,47941 Foster Path
-Oaza mira,Goeteborg,4.0,386,37403 Rivera Skyway
-Ocean Retreat,Malmoe,3.5,237,378 Greene Divide
-Sunset Oasis,Malmoe,4.0,371,354 Richards Court
-Harbour View Inn,Malmoe,3.0,165,937 Taylor Mountain
-Sjajni vrhovi,Upsala,3.0,184,403 Kenneth Cliff
-Plava kuća,Upsala,4.0,355,8017 Harris Spurs
-Zlatni zalazak sunca,Upsala,4.0,371,18002 Allen Springs
-Sunčani vrt,Sollentuna,4.0,420,503 Hickman Path
-Biser jezera,Sollentuna,3.5,256,97822 Foster Ridges
-Skandinavski raj,Sollentuna,3.5,289,33772 Bass Motorway
-Mirabello Palace,Lisabon,4.0,363,4962 Stephanie Dale
-Ocean Breeze Retreat,Lisabon,3.5,303,770 Daniel Extension
-Royal Palms Oasis,Lisabon,3.0,127,4636 Benjamin Stream
-Oceanski raj,Porto,3.0,182,97315 Stewart Ridge
-Vila San Marino,Porto,4.0,444,29229 Regina Path
-Zlatna obala,Porto,3.0,132,4931 Gonzales Ramp
-Serenity Palace,Amadora,4.0,363,632 Rachel Tunnel
-Golden Oasis Retreat,Amadora,3.5,225,6794 Jones Villages
-Majestic Hideaway,Amadora,4.0,400,00323 Angela Inlet
-Sjajni zamak,Braga,3.0,167,8409 Kelly Alley
-Oaza odmora,Braga,3.5,267,873 Alicia Causeway
-Zeleni raj,Braga,3.0,73,52658 Chapman Turnpike
-Bellevue Retreat,Setubal,3.5,259,3540 Perry Drive
-Ocean Vista Hotel,Setubal,4.0,407,685 Curtis Greens
-Golden Cove Inn,Setubal,3.0,112,28229 Kenneth Crest
-Olimpik Palas,Atina,4.0,419,0567 Mary Lakes
-Zlatni Vrhovi,Atina,3.0,171,297 Wood Glens
-Bela Kula Resort,Atina,3.5,258,60351 Cook Skyway
-Villa Oasis,Solun,3.0,17,302 Jones Underpass
-Royal Retreat,Solun,4.0,408,16331 Robinson Prairie
-Azure Bay Resort,Solun,3.0,159,93432 Robert Overpass
-Golden Oasis Retreat,Patra,3.0,185,USS Smith
-Sea Breeze Hideaway,Patra,3.0,129,4481 Christopher Lakes
-Paradise Cove Resort,Patra,3.0,151,38577 Ramirez Skyway
-Sirene Palace,Pirej,4.0,414,2854 White Circles
-Beldevere Retreat,Pirej,3.0,187,128 David Court
-Marina Vista Inn,Pirej,4.0,390,Unit 0095 Box
-Divina Oasis,Larisa,3.5,247,843 Misty Fords
-Silver Cliffs Retreat,Larisa,3.5,293,1614 Sonya Crescent
-Sunrise Cove Resort,Larisa,3.0,187,14419 Thompson Green
-El Paraiso del Sol,Meksiko,3.5,300,5047 Alexis Locks
-La Luna Encantada,Meksiko,5.0,699,095 George Valleys
-Casa de Estrellas,Meksiko,4.0,365,615 Rodriguez Ports
-Oaza mira,Iztapalapa,4.0,351,45752 Green Port
-Bela palma,Iztapalapa,3.5,221,79496 Anthony Lodge
-Zlatni zalazak,Iztapalapa,4.0,401,84227 Watts Shoals
-Sunčeva oaza,Ekatepec de Morelos,4.0,436,921 Barnes Tunnel
-Zelena tajna,Ekatepec de Morelos,3.0,97,424 Daniel Locks
-Karmen Palas,Ekatepec de Morelos,3.0,121,340 Rachel Mill
-Bella Vista Retreat,Gvadalahara,4.5,574,2089 Sarah Streets
-Casa Grande Oasis,Gvadalahara,3.5,300,USCGC Williams
-El Dorado Springs Inn,Gvadalahara,3.5,274,8539 Baldwin Well
-El Encanto de los Volcanes,Puebla,4.0,356,2857 Madeline Turnpike
-Jardines del ngel,Puebla,4.0,410,770 Tim Fields
-Casa de la Luna Esmeralda,Puebla,4.0,380,133 Christopher Mission
-Zora Palace,Toronto,3.5,243,71716 David Light
-Aurora Retreat,Toronto,4.5,570,869 Boyd Point
-Royal Springs Lodge,Toronto,3.5,264,"PSC 2396, Box"
-Serenity Cove Retreat,Montreal,3.0,159,3395 Andre Park
-Chteau Royal Haven,Montreal,3.0,183,430 Michael Wells
-The Oasis at Mont Tremblant,Montreal,3.5,251,1059 Joe Fall
-Aurora Retreat,Calgari,3.5,229,97926 Hubbard Heights
-Mountain View Lodge,Calgari,3.5,246,2937 Burke Canyon
-Wild Rose Inn,Calgari,3.5,290,770 Garcia Brook
-Royal Oasis,Otava,3.0,-21,678 Jacqueline Green
-Emerald Retreat,Otava,3.0,167,65743 Christopher Point
-Sunset Serenity ,Otava,4.0,395,676 Johnson Spurs
-Oaza mira,Edmonton,4.0,356,247 Dawson Plaza
-Kraljevski odmor,Edmonton,3.0,174,82512 Joanne Shores
-Biser doline,Edmonton,3.0,178,3668 Bailey Pine
-La Casa de la Selva,Gvatemala,4.0,414,3894 Ryan Point
-El Refugio del Sol,Gvatemala,3.5,241,37747 Price Estates
-Los Jardines del Volcn,Gvatemala,3.0,185,"PSC 1484, Box"
-Zlatni Biser,Miksko,4.5,546,Unit 2133 Box
-Plavi Horizont,Miksko,3.5,230,447 Knight Route
-Suncani Raj,Miksko,4.0,368,158 Mitchell Loaf
-Oaza mira,Vila Nueva,3.5,259,245 Amber Shore
-Tropska avantura,Vila Nueva,3.5,267,85333 Robert Turnpike
-Letnja bajka,Vila Nueva,3.0,154,50604 Huang Greens
-Villa del Mar,Petapa,3.0,163,4292 Melanie Tunnel
-Oasis Retreat,Petapa,4.0,426,325 Susan Burgs
-Royal Palms Resort,Petapa,3.0,140,05740 Amber Springs
-Pachamama Retreat,San Huan Sakatepekuez,3.5,287,07933 Lopez Burg
-El Paraiso del Sol,San Huan Sakatepekuez,3.0,135,98796 Deborah Flat
-La Casa de los Sueos,San Huan Sakatepekuez,3.5,241,328 Harris Square
-Osis Lux,Sao Paulo,3.5,259,303 Jennifer Islands
-Imperium Palace,Sao Paulo,3.0,103,4174 Gregory Parks
-Tropical Retreat ,Sao Paulo,4.0,413,01890 Taylor Spurs
-Hotel Copacabana Oasis,Rio de Žaneiro,3.5,246,39530 Gutierrez Lane
-Pousada Sereia do Mar,Rio de Žaneiro,4.0,421,87933 Wolf Grove
-Grand Palace Ipanema Resort,Rio de Žaneiro,3.0,155,3821 Robbins Drive
-Majestic Bay Resort,Salvador,4.0,391,3362 Susan Harbor
-Paradise Oasis Hotel,Salvador,4.5,600,2472 Kennedy Isle
-Tropical Retreat Lodge,Salvador,3.5,281,61921 Hodges Causeway
-Luar do Cear,Fortaleza,3.0,176,38477 John Camp
-Vivenda Tropical,Fortaleza,3.5,304,11193 Salas Shoals
-Praia da Esperana,Fortaleza,3.5,275,1540 Roberts Light
-La Luna Hotel,Belo Horizonte,3.5,244,49972 Kelly Point
-Oasis Palace,Belo Horizonte,3.5,252,20590 Steven Fords
-Royal Crest Resort,Belo Horizonte,3.0,182,3576 Debbie Ridges
-Luksuzna palata na Andima,Bogota,3.5,300,USNS Lambert
-Tropikana oaza u Kolumbiji,Bogota,3.5,229,89551 Martin Trafficway
-Ekskluzivni neboder u centru Bogote,Bogota,3.0,161,758 Susan Crossroad
-Luksuzni odmor,Kali,4.0,382,3313 Michael Ranch
-Oaza plaže,Kali,3.5,248,19784 Smith Stream
-Tropska avantura,Kali,5.0,706,016 Rita Wall
-Povetarac Spa Hotel,Medellinu,3.5,241,962 Adam Groves
-Zelena Oaza Boutique Hotel,Medellinu,3.0,171,437 Schmidt Pass
-Vreli Kamen Design Hotel,Medellinu,3.0,184,30175 Fox Stravenue
-Oaza blaga,Barankilja,3.5,295,707 Taylor Cove
-Zlatna pećina,Barankilja,3.0,173,556 Mark Underpass
-Mirisni vrt,Barankilja,3.0,130,USCGC Scott
-Laguna Oasis,Kartahena,4.5,522,1897 Maria Knolls
-Oceans Edge Retreat,Kartahena,3.0,132,552 Veronica Points
-Palma del Sol Boutique Hotel,Kartahena,4.5,508,2099 Jason Mews
-La Bella Vista,Buenos Ajres,3.5,275,84605 Bennett Common
-El Paraso Encantado,Buenos Ajres,3.0,145,080 Jennifer Court
-Oasis del Sol,Buenos Ajres,4.5,525,501 Mendoza Plains
-La Quinta del Sol,Kordoba,3.5,245,824 Kim Ports
-El Palacio de la Montaa,Kordoba,3.0,149,4530 Christensen Squares
-Villa del Corazn,Kordoba,3.5,268,43655 Jones Dale
-Oceanside Retreat,Rosario,4.0,429,817 Mcguire Stream
-Serenity Haven,Rosario,4.0,368,85984 Gregory Springs
-Sunflower Hideaway,Rosario,4.0,383,4239 Bryant Drive
-La Vida Bella,Mendoza,4.5,535,30747 Kenneth Green
-El Oasis del Sol,Mendoza,3.5,281,636 Cohen Skyway
-Maravilla de los Andes,Mendoza,3.5,295,726 Brittany Run
-El Oasis del Norte,San Migel de Tukuman,3.5,243,429 Jeffrey Street
-Casa del Sol y Luna,San Migel de Tukuman,3.0,116,54665 Hunt Grove
-La Finca Encantada,San Migel de Tukuman,3.5,250,7636 Ryan Station
-Plava laguna,Sidnej,4.5,519,045 Nathaniel Locks
-Pijesak i sunce,Sidnej,3.0,95,5605 Burke Curve
-Marinskaja oaza,Sidnej,4.0,434,Unit 2690 Box
-Oaza na obali,Melburn,3.5,285,987 Patterson Knolls
-Sunčani vrtovi,Melburn,3.0,157,3850 Brooke Manors
-Luksuzna senka,Melburn,3.5,268,398 Sarah Drive
-Tropical Oasis Retreat,Brizbejn,4.5,537,78758 Simpson Shoal
-The Seaside Haven,Brizbejn,3.0,182,USCGC Pearson
-Riverside Escape Resort,Brizbejn,4.0,379,3757 Gloria Prairie
-Ocean Breeze Retreat,Perth,4.0,413,26676 Elizabeth Forges
-Hillside Haven Hotel,Perth,3.0,158,6016 Lamb Mall
-Serenity Cove Resort,Perth,4.0,363,6706 Roger Green
-Morski san,Adelaida,4.0,354,756 Kelly Villages
-Zlatni zalazak sunca,Adelaida,3.5,221,5326 Hardin Ramp
-Bela plaža,Adelaida,4.0,368,991 Kathryn Square
-Tropical Oasis Hotel,Port Morsbi,3.5,231,7198 James Centers
-Blue Lagoon Resort,Port Morsbi,3.0,182,9710 Bowman Road
-Papua Paradise Inn ,Port Morsbi,3.0,132,76964 Robert Summit
-Plamena Oaza,Lae,3.5,296,400 Hogan Plains
-Zeleni Biser,Lae,3.5,225,779 Susan Light
-Morski Pogled,Lae,3.0,183,1650 Sullivan Hill
-Oasis Retreat Hotel,Arava,3.0,139,76049 Davis Pine
-Desert Breeze Resort,Arava,3.0,123,042 Pam Stravenue
-Sunflower Dreams Inn,Arava,3.0,166,084 Robert Pines
-Oasis Retreat,Mount Hagen,4.0,373,692 Butler Shore
-Mountain Haven,Mount Hagen,3.0,164,70466 Justin Prairie
-Skyline View Resort,Mount Hagen,4.0,444,4101 Shelton Villages
-Papatango Paradise,Popondetta,3.5,298,3926 Gomez Ford
-Ocean Breeze Resort,Popondetta,3.5,276,415 Mark Motorway
-Jungle Haven Retreat,Popondetta,3.0,135,99189 Zachary Fort
-Ostrvo Sunca,Auckland,4.5,557,836 Latasha Brooks
-Sjajna obala,Auckland,3.0,117,9470 Johnson Springs
-Kraljevska panorama,Auckland,4.0,353,1319 Morris Valley
-Plava bajka,Velington,4.5,528,117 Stephen Row
-Oaza u planinama,Velington,3.5,245,7952 Padilla Highway
-Biserna obala,Velington,3.0,174,75901 King Lakes
-Ocean View Retreat,Christchurch,3.5,261,740 Ryan Neck
-Willow Grove Lodge,Christchurch,4.0,392,22647 Williams Islands
-Serenity Heights Resort,Christchurch,4.0,436,633 Salinas Squares
-Royal Oasis,Manukau Citi,4.0,360,"PSC 6758, Box"
-Sunrise Retreat,Manukau Citi,3.0,145,4946 Jacobs Trafficway
-Ocean Breeze Resort,Manukau Citi,3.0,174,572 Barbara Tunnel
-Tropic Breeze Resort,Vaitakere,3.5,280,91092 Matthew Mews
-Coconut Cove Villa,Vaitakere,3.0,129,7339 Christopher Court
-Ocean Haven Retreat,Vaitakere,3.5,241,9613 Davenport Courts
+umski raj,Mumbaj,3.5,301,4751 Calderon Fork
+Luksuzni grad,Mumbaj,3.5,234,06470 Moore Oval
+Tropsko utočište,Mumbaj,4.5,611,Unit 0237 Box
+Zlatni Bazar Hotel,Delhi,3.5,240,24003 Nguyen Pike
+Rajski Odmor Resort,Delhi,3.5,272,3156 Myers Shoal
+Sunčani Vrhovi Boutique Hotel,Delhi,4.5,516,632 Baldwin Skyway
+Serenity Retreat,Bengaluru,3.0,157,3941 Erika Ferry
+Cherry Blossom Lodge,Bengaluru,3.0,181,679 Cisneros Pike
+Oasis Haven Resort,Bengaluru,3.5,279,28390 Ewing Fields
+The Golden Retreat,Kolkata,3.5,234,51779 William Shores
+Bengal Breeze Hotel,Kolkata,3.0,136,95282 Christine Vista
+The Grand Gateway Resort,Kolkata,3.5,245,29534 Henderson Key
+Luksuzni odmor,Čenaj,3.5,231,600 Fleming Flats
+Oaza ugleda,Čenaj,4.0,360,9861 Brian Path
+Zlatni dvorac,Čenaj,3.0,100,29457 Omar Branch
+Luksor Palace,Šangaj,3.0,172,98162 Wilson Tunnel
+Zlatna Kula,Šangaj,4.0,415,93429 Smith View
+Japanski Vrtovi,Šangaj,4.5,546,178 Lindsay Inlet
+Zlatni feniks,Peking,3.0,112,8533 Elizabeth Mountains
+Biserna palata,Peking,4.0,364,"PSC 1406, Box"
+Kineski vrtovi,Peking,3.0,151,250 Christopher Green
+Pearl View Hotel,Tianjin,3.0,161,Unit 5525 Box
+Golden Sun Resort,Tianjin,3.0,160,Unit 6694 Box
+Ocean Breeze Lodge,Tianjin,3.5,226,66159 Johnson Islands
+Zlatna oaza,Guangdžou,4.0,400,0396 Edwards Avenue
+Nebesko nasleđe,Guangdžou,4.0,371,239 Wells View
+Elegantni dragulj,Guangdžou,3.5,268,93221 Nguyen Pike
+Sunflower Retreat ,Šenžen,3.5,231,42309 Nichols Overpass
+Oasis Palace ,Šenžen,3.5,263,6502 Makayla Islands
+Golden Horizon Resort,Šenžen,3.5,253,209 Pamela Mountain
+Tropical Breeze Resort,Džakarta,4.0,379,59506 Richardson Burg
+Palms Oasis Hotel,Džakarta,3.0,178,68044 Cooper Freeway
+Serenity Cove Lodge,Džakarta,3.5,262,40884 Matthew Passage
+Oasis Retreat,Surabaia,3.5,254,15605 Rice Crossroad
+Emerald Breeze Resort,Surabaia,3.5,258,5460 Fletcher Harbors
+Sunset Horizon Hotel,Surabaia,3.5,284,01490 Karen Roads
+Tropical Oasis Retreat ,Medan,3.5,280,14701 Tucker Harbor
+Harmony Haven Resort ,Medan,4.0,433,082 Kenneth Inlet
+Serenity Springs Hotel,Medan,3.5,255,65214 Jacqueline Field
+Oaza odmora,Bandung,4.5,513,318 Johnson Cliff
+Planinski raj,Bandung,3.5,236,6373 Williams Fords
+Veličanstveni vrhovi,Bandung,3.5,221,062 Smith Summit
+Oaza odmora,Bekasi,3.5,271,071 Blake Lock
+Zlatni zalazak,Bekasi,3.5,294,Unit 8754 Box
+Mirna oaza,Bekasi,3.5,286,1996 Hayes Cape
+Plavi zalazak,Lagos,4.0,429,94554 Dixon Camp
+Tajna oaza,Lagos,4.0,414,2620 Williams Loop
+Zeleni biser,Lagos,3.5,306,"PSC 7433, Box"
+Luksuzni bor,Kano,3.5,233,"PSC 4949, Box"
+Sunčana oaza,Kano,3.5,254,19112 Smith Trail
+Vila mira ,Kano,4.0,441,65314 Allen Roads
+Sunčani raj,Ibadan,3.5,282,617 Alexis Junctions
+Oaza mira,Ibadan,3.0,127,USNS Collins
+Zlatni biser,Ibadan,3.0,173,"PSC 9032, Box"
+Zlatna Oaza,Kaduna,3.0,182,9534 Stewart Neck
+Planinska Avantura ,Kaduna,4.0,415,142 Brock Course
+Oasis Heritage ,Kaduna,3.5,253,592 Michael River
+Tropicana Paradise,Port Harcourt,4.5,592,2282 Stacy River
+Sapphire Marble Inn,Port Harcourt,4.0,366,61754 Samantha Drive
+Golden Oasis Retreat,Port Harcourt,3.5,273,750 Irwin Turnpike
+Palača Zvezda,Adis Abeba,3.5,224,28798 Campbell Pine
+Sjajna Oaza,Adis Abeba,4.0,397,7358 Glover Port
+Biseri Etiopije,Adis Abeba,3.5,241,86852 Justin Ways
+Sunset Oasis Hotel,Dire Dava,3.0,163,376 Harris Estate
+Royal Cliff Retreat,Dire Dava,4.0,357,887 Flowers Manor
+The Pearl Garden Resort,Dire Dava,3.5,264,89976 Kristin Burgs
+Sunčana Oaza,Nazret,4.0,419,55029 King Ridges
+Mermerni San,Nazret,3.5,256,1545 Evelyn Camp
+Zlatni Biser,Nazret,3.0,11,8173 Weeks Radial
+Plavi Nil Resort ,Bahir Dar,4.0,379,086 John Motorway
+Vodeni Raj Hotel ,Bahir Dar,3.0,84,Unit 7780 Box
+Tropikana Palace,Bahir Dar,4.5,511,122 Coleman Neck
+Luksor Palace,Gondar,4.5,542,"PSC 1329, Box"
+Oasis Retreat,Gondar,3.5,225,7079 Johnson Flat
+Serene Haven,Gondar,3.0,138,7174 Kenneth Ports
+Saphira Retreat,Kairo,3.0,120,Unit 9781 Box
+Nile Palace Oasis,Kairo,4.0,387,93716 Kevin Knolls
+Oasis Towers Luxury Resort,Kairo,3.5,245,83477 Kelly Mills
+Bela Oaza Hotel,Aleksandrija,3.0,180,0743 Hall Crossing
+Morski Biser Hotel,Aleksandrija,3.5,241,4272 Ford Park
+Zlatni Sunčevi zraci Hotel,Aleksandrija,4.5,572,6787 Cunningham Squares
+Pustinjski anđeo,Giza,3.5,293,338 John Turnpike
+Zlatni Oaza,Giza,4.0,375,2566 Katrina Extensions
+Veliko Carstvo,Giza,4.0,378,314 Santos Flats
+Mediterranean Breeze Hotel,Port Said,4.0,402,5161 Church Harbors
+Pearl Sands Resort,Port Said,4.0,406,7918 George Walks
+Sunflower Retreat,Port Said,3.0,172,62410 Adrian Spur
+Zlatna plaža,Suec,3.5,244,56634 Brian Circle
+Morski biser,Suec,3.0,168,"PSC 2525, Box"
+Oaza mira,Suec,3.0,172,4167 Harry Ramp
+Zlatni dvorac,Moskva,4.0,414,98215 Tammy Trafficway
+Lavlji ponos,Moskva,3.0,187,7164 Megan Fork
+Snežna palata,Moskva,3.5,256,USNV Nunez
+Zlatni Dvorac,Sankt Peterburg,3.0,173,7288 Russell Villages
+Nebeski Kanal,Sankt Peterburg,3.0,180,3669 Troy Drive
+Baltička Bajka,Sankt Peterburg,4.0,379,70238 Reed Port
+Zlatni patuljak,Novosibirsk,3.5,224,73964 Alvarado Greens
+Oaza sibirskih šuma,Novosibirsk,3.5,220,36009 Pope Mills
+Plavi vodopad,Novosibirsk,3.5,306,4648 Taylor Islands
+Zlatno Sunce,Jekaterinburg,4.0,350,8367 Le Path
+Divlja Ruža,Jekaterinburg,4.0,379,99299 Austin River
+Kraljevska Oaza,Jekaterinburg,3.5,277,23561 Benton Harbor
+Hotel Zlatni Trg,Nižnji Novgorod,3.0,93,93757 Pope Harbors
+Pansion Bela Dama,Nižnji Novgorod,4.0,363,37158 Robbins Motorway
+Grand Kraljica Palata,Nižnji Novgorod,3.5,306,363 Jason Station
+Savis Retreat,Berlin,4.0,402,421 William Grove
+The Velvet Rose,Berlin,3.0,162,9930 Ellis Union
+The Azure Oasis,Berlin,5.0,690,98780 Ruiz Villages
+Luksuzna tajna oaza,Hamburg,3.0,133,753 Michael Skyway
+Baltička obala raja,Hamburg,4.0,373,1234 Gonzales Rest
+Krajnje udoban boravak,Hamburg,3.5,267,2394 Martin Plaza
+Zlatni dvor,Minhen,3.5,220,43058 Julie Spring
+Proljetno sunce,Minhen,4.0,382,8751 James Courts
+Bajkovita oaza,Minhen,3.5,238,4802 Jose Tunnel
+Sunshine Retreat,Koeln,3.0,50,Unit 0984 Box
+Royal Oasis,Koeln,3.0,137,482 Taylor Streets
+Harmony Haven,Koeln,3.5,303,0315 Fuentes Park
+Blossom Retreat,Frankfurt na Majni,4.5,589,73614 Jessica Highway
+Harmony Haven,Frankfurt na Majni,3.0,114,4829 Stacy Locks
+Rive Gauche Suites,Frankfurt na Majni,3.5,261,5502 Martinez Pine
+The Royal Blade Hotel,London,4.0,445,59243 Hess Plain
+The Crimson Rose Inn,London,4.0,361,52280 Richard Prairie
+The Velvet Lantern Retreat,London,3.5,230,58575 David Shores
+The Ivy Retreat,Birmingem,3.0,118,531 Kelly Parkway
+Serenity Cove Hotel,Birmingem,3.0,91,25003 Reyes Via
+Oak Ridge Lodge,Birmingem,3.0,169,42037 Day Trace
+Riviara Grand,Liverpul,3.5,230,6152 Bradford Locks
+The Seafarers Retreat,Liverpul,3.0,56,21478 Jenkins Mountain
+Emerald Oasis Hotel,Liverpul,3.0,98,USNS Anderson
+Kraljevski plamen,Notingem,3.5,289,"PSC 4560, Box"
+Magični dvorac,Notingem,3.5,227,8629 Donna Wall
+Zlatni srčanik,Notingem,3.0,168,7511 Weaver Hollow
+The Haven Retreat,Šefild,3.5,227,344 Goodman Drive
+Riverside Oasis,Šefild,3.0,164,277 Russell Harbors
+Sheffield Hills Hideaway,Šefild,4.0,393,1817 Patton Grove
+Belle Vue Inn,Pariz,4.5,522,083 Shaun Spring
+Ltoile Palace,Pariz,4.5,571,"PSC 4808, Box"
+Le Jardin Chteau ,Pariz,4.0,371,3601 Hamilton Track
+Bella Vista,Marsej,4.0,375,24727 Thompson Neck
+Elysee Palace,Marsej,4.0,446,609 Kemp Villages
+Azure Retreat,Marsej,4.5,533,094 Melissa Flats
+Kraljevski sokoli,Lion,4.0,447,378 Powers Trail
+Lavlja šuma,Lion,4.0,421,373 Margaret Drive
+Zlatna pećina,Lion,3.0,177,98087 Holmes Harbors
+Zlatni Vrtovi,Tuluz,3.0,105,"PSC 4522, Box"
+Belvedere Luks,Tuluz,4.0,388,54931 Julie Roads
+Lavanda Luks,Tuluz,3.5,254,104 Logan Lock
+Sunčani Biseri,Lep,3.5,258,26893 Paul Forks
+Mirni Odmor,Lep,3.0,158,"PSC 4650, Box"
+Zlatni Oblaci,Lep,3.0,127,07653 Mueller Stravenue
+La Dolce Vita Suite Hotel,Rim,4.0,440,0611 Costa Oval
+Imperiale Palace Retreat,Rim,3.5,303,73643 Scott Land
+Oasi del Colosseo Resort,Rim,3.0,145,2627 Mejia Forges
+Rialto Palace,Milan,3.5,297,USNS Thompson
+Serendipity Suites,Milan,3.5,289,9225 Rodriguez Spurs
+Grand Oasis Retreat,Milan,4.0,352,013 Vickie Stream
+Mediterraneo Palace,Napulj,4.5,589,720 Tucker Avenue
+Golden Sunset Resort,Napulj,3.5,259,5068 Harris Avenue
+Villa del Mare,Napulj,3.0,129,613 Dana Passage
+Belvedere Palace Hotel,Torino,3.5,266,65832 Murphy Islands
+Royal Mountain Retreat,Torino,3.0,177,Unit 8270 Box
+Vineyard View Inn,Torino,4.0,355,"PSC 9403, Box"
+Oaza Sunca,Palermo,3.5,281,08505 Jodi Extensions
+Ponosna Palma,Palermo,3.5,293,99963 Hutchinson Ferry
+Bela Vila,Palermo,3.0,182,4193 Christopher Cove
+Palmira Deluxe,Madrid,3.5,299,87088 Davis Orchard
+Oasis Retreat,Madrid,3.0,187,7732 John Manor
+Serenity Escape,Madrid,4.0,352,35596 Ryan Union
+Lujza Palas,Barselona,3.5,236,83585 Hughes Glens
+El Zmajeviti Krovovi,Barselona,3.0,141,7659 Tanya Drives
+Kaskada Morave,Barselona,3.5,306,042 Barnes Way
+Palacio del Mar,Valensija,3.0,172,7575 Sanders Cove
+Oasis Azul,Valensija,4.0,444,10141 Sparks Garden
+Riviera del Sol,Valensija,3.5,301,465 Sarah Oval
+Rosa de Andaluca,Sevilja,3.5,303,4067 Gallegos Field
+El Patio Encantado,Sevilja,3.5,271,9738 Taylor Keys
+La Casa del Flamenco,Sevilja,3.5,257,7225 Newton Ramp
+Vrtovi Sijene,Saragosa,3.0,46,262 Alexis Ville
+Oaza Mirnog mora,Saragosa,4.0,422,0629 Justin Valley
+Palata Sanela,Saragosa,3.0,164,1185 Aaron Dam
+Zlatna Palma Hotel,Varšava,4.0,396,476 John View
+Oaza Luksuza,Varšava,3.0,177,29908 Rodriguez Forks
+Imperijalna Vila,Varšava,3.5,250,USNV Salinas
+Luksuzna vila Zelena oaza,Lodz,3.5,243,076 Barker Bridge
+Boutique hotel Sobe stilskog enterijera,Lodz,3.0,147,61015 Anna Union
+Spa centar Biser grada,Lodz,3.5,247,1440 Amanda Manors
+Krakovski dvorac,Krakov,3.5,304,179 Shannon Parkway
+Zlatni zmajevi,Krakov,3.5,226,03226 Gentry Plains
+Gothic Garden Inn,Krakov,3.0,130,67695 Woods Ports
+Zlatni labud ,Vroclav,3.0,182,0044 Stephanie Meadow
+umsko carstvo ,Vroclav,3.5,284,Unit 6614 Box
+Villa mira,Vroclav,4.0,415,7895 Fields Junction
+Zvezdano Nebo Hotel,Poznanj,4.0,384,5927 Terry Trafficway
+Plavi Dah Hotel,Poznanj,3.5,288,94486 Linda Manor
+Vila Mirisna Ruža ,Poznanj,3.0,150,589 William Crescent
+Zlatna kula,Kijev,4.0,391,993 Victoria Greens
+Kraljevski odmor,Kijev,3.5,265,202 Mclaughlin Crest
+Oaza mira,Kijev,3.5,242,367 Hill Light
+Sunčana oaza,Harkov,4.0,391,33842 Sullivan Prairie
+Vremeplov boutique hotel,Harkov,4.0,362,"PSC 6047, Box"
+Utopija resort,Harkov,3.5,306,833 Cross Ranch
+Beli galebovi ,Dnjepar,3.0,139,5691 Richardson Forest
+Sunčani osmeh ,Dnjepar,3.0,179,USCGC Pitts
+Kraljevski odmor,Dnjepar,3.0,97,1080 Lori Walks
+Proljetni Biser,Donjeck,3.5,280,5992 Buchanan Mill
+Ljubičasta Oaza,Donjeck,3.5,265,548 Elizabeth Streets
+Sunčani Zalazak,Donjeck,4.0,393,7447 Barton Springs
+Sunčana obala,Odesa,3.5,281,4074 Bean Gateway
+Luksuzni odmor,Odesa,3.5,230,466 Byrd Overpass
+Biser Crnog mora,Odesa,4.5,575,2495 Carrillo Causeway
+Gran Hotel Luxuria,Bukurešt,3.0,148,2047 Acosta Gardens
+Royal Palace Retreat,Bukurešt,3.0,125,53938 Jordan Streets
+Emerald Oasis Resort,Bukurešt,3.0,179,04073 Castaneda Track
+Zlatni vrhovi,Iasi,4.0,352,71759 Powell Neck
+Vila mira,Iasi,3.5,232,5519 Jeffrey Overpass
+Oaza sreće,Iasi,3.5,224,427 Marcus Mountain
+Vila Makiš,Temišvar,3.0,141,13378 Michael Union
+Oaza Zelenila,Temišvar,4.0,447,43856 Stokes Springs
+Palata Sunca,Temišvar,3.0,178,403 Wolf Stream
+Zlatno sunce,Craiova,3.0,144,04638 Flores Roads
+Vila senki,Craiova,3.5,252,94736 Tasha Street
+Imperatorov dvor,Craiova,3.0,164,1380 Richard Falls
+Vila Marina,Constanta,3.5,242,00936 Debra Key
+Grand Oasis,Constanta,4.0,434,53343 Lopez Fort
+Palazzo del Mare,Constanta,3.5,223,66628 Erin Lights
+Grand Canal Palace,Amsterdam,3.5,258,01558 Payne Burg
+Amstel Royal Oasis,Amsterdam,3.5,230,10465 Edwards Radial
+Tulip Boutique Hotel,Amsterdam,3.5,246,"PSC 9124, Box"
+Grand Oasis,Roterdamski,4.0,382,"PSC 2056, Box"
+Harbour View Retreat,Roterdamski,4.0,353,"PSC 1345, Box"
+Skyline Boutique,Roterdamski,3.5,233,513 Lisa Isle
+Ocean View Retreat,Hag,3.0,155,20834 John Islands
+Sunset Oasis Resort,Hag,3.5,251,5458 Lamb Ridges
+Royal Palm Hideaway,Hag,4.0,383,69627 Cain Rapid
+Royal Retreat,Utreht,3.5,261,856 Cole Views
+Serene Oasis,Utreht,3.5,251,99398 Michael Burg
+Noble Haven,Utreht,3.0,89,73532 Virginia Bridge
+Sunčani Vrtovi,Ajndhoven,4.0,399,8410 Rodriguez Mill
+Oaza Zelenila,Ajndhoven,3.0,113,162 Hunt Spurs
+Modra Laguna,Ajndhoven,3.0,129,2870 Sawyer Drive
+Belgijski biser,Brisel,3.5,230,USNV Riley
+Grand Boulevard,Brisel,3.5,266,Unit 8676 Box
+Dvorana trgovačkih zanata,Brisel,3.5,266,69145 Cynthia Brook
+Royal Boutique Hotel,Antverpen,3.0,168,008 Simpson Mountains
+Harbor View Inn,Antverpen,3.5,235,31069 Robertson Via
+Belgian Oasis Resort,Antverpen,3.0,179,6778 Kerry Neck
+Belgijski dvorac,Gent,3.0,89,"PSC 2718, Box"
+Kanalska oaza,Gent,3.5,240,16969 Burns Roads
+Zeleno polje,Gent,3.0,173,6228 Oconnor Divide
+Zeleni Vrtovi,Šarlroa,3.5,299,Unit 2843 Box
+Biser Sambre,Šarlroa,3.5,250,24740 Brooks Squares
+Palača Duha,Šarlroa,4.0,396,56708 Kelley Bypass
+Belle Vue Retreat,Liege,4.0,370,USCGC Turner
+La Chateau Blanc,Liege,4.0,390,80939 Shannon Parkways
+Riverside Oasis,Liege,4.0,421,275 Mitchell Rue
+Baltic Oasis,Stokholm,4.0,369,04258 Schneider Lake
+Nordic Haven,Stokholm,3.5,248,"PSC 5242, Box"
+Scandinavian Retreat,Stokholm,4.0,435,Unit 8189 Box
+arobni zalivski hotel,Goeteborg,3.0,155,49596 Anderson Ridge
+Ponornica udobnosti,Goeteborg,3.5,259,USNS Green
+Brisani pogledi na more,Goeteborg,4.0,386,4067 Conley Hills
+Sunflower Retreat,Malmoe,3.5,237,1200 Jennifer Haven
+Ocean Breeze Hotel,Malmoe,4.0,371,8490 Michele Bridge
+Nordic Haven Resort ,Malmoe,3.0,165,077 Kristi Well
+Zlatni dvor,Upsala,3.0,184,35876 Bryan Rapid
+Sunčana oaza,Upsala,4.0,355,736 Miller Knoll
+Bajkoviti vrtovi,Upsala,4.0,371,4282 Erik Island
+Zeleni vrhovi,Sollentuna,4.0,420,"PSC 6783, Box"
+Oaza tišine,Sollentuna,3.5,256,0745 Daniel Terrace
+Dragulj od Sollentuna,Sollentuna,3.5,289,0759 Coleman Gardens
+Samba Cove Hotel,Lisabon,4.0,363,76254 Kirk Causeway
+Mirage Retreat,Lisabon,3.5,303,499 Fisher Key
+Golden Sun Palace,Lisabon,3.0,127,3474 Christopher Views
+Oceans Edge Retreat,Porto,3.0,182,39145 Laura Mews
+Riverside Oasis Inn,Porto,4.0,444,8015 Garcia Meadow
+Harbor View Hotel,Porto,3.0,132,382 Jessica Oval
+Sunčani raj,Amadora,4.0,363,9757 Wallace Junction
+Oaza udobnosti,Amadora,3.5,225,24468 Michael Avenue
+Biser Portugala,Amadora,4.0,400,4882 Fox Way
+Siesta Oasis,Braga,3.0,167,362 Fields Station
+Gardenia Retreat,Braga,3.5,267,53004 Jennifer Road
+Azure Haven,Braga,3.0,73,346 Heather Camp
+Ocean View Retreat,Setubal,3.5,259,26226 Cooper Bypass
+Sunset Oasis Resort,Setubal,4.0,407,1450 Wiggins Fields
+Riverside Haven,Setubal,3.0,112,08977 Phillips Hollow
+Astra Palace,Atina,4.0,419,530 Miranda Wall
+Olympian Retreat,Atina,3.0,171,3297 Giles Mission
+Acropolis View Hotel,Atina,3.5,258,8411 Elijah Dale
+Plavi Zaliv,Solun,3.0,17,7536 Veronica Stravenue
+Oaza Luksuz,Solun,4.0,408,USS Aguilar
+Zlatna Palma,Solun,3.0,159,USS Sims
+Olimpia Palace Hotel,Patra,3.0,185,72325 Matthews Run
+Mare Nostrum Resort,Patra,3.0,129,13386 White Squares
+Agora Boutique Hotel,Patra,3.0,151,77001 Hayley Flat
+Plavobeli raj hotel,Pirej,4.0,414,4507 Davenport Stravenue
+Sunčani zaliv hotel,Pirej,3.0,187,00924 Sparks Forges
+Vila morskih talasa hotel,Pirej,4.0,390,91774 Amy Causeway
+Hotel Ljupček,Larisa,3.5,247,2674 Donna Village
+Vila Zeleni Kutak,Larisa,3.5,293,62722 Wayne Lights
+Sobe Sunčani Odmor,Larisa,3.0,187,053 Sandra Terrace
+El Mirador Oasis,Meksiko,3.5,300,9115 Nichole Hills
+Casa del Mar Azul,Meksiko,5.0,699,884 Dunn Locks
+La Palma del Sol,Meksiko,4.0,365,5001 Brett Gardens
+La Casa del Sol,Iztapalapa,4.0,351,891 Sarah Plaza
+Osis del Lago,Iztapalapa,3.5,221,644 Jason Run
+El Paraso Escondido,Iztapalapa,4.0,401,761 Clayton Burg
+Oaza vrtova,Ekatepec de Morelos,4.0,436,095 Park Isle
+Ponosna planina,Ekatepec de Morelos,3.0,97,0013 Brandon Locks
+Plavi horizonti,Ekatepec de Morelos,3.0,121,0606 Luis Meadows
+Pecora Boutique Hotel,Gvadalahara,4.5,574,94660 Darlene Court
+Casa del Sol Resort  Spa,Gvadalahara,3.5,300,89723 Lisa Gateway
+Villa Serenity Retreat,Gvadalahara,3.5,274,59339 Warner Highway
+El Paradiso Boutique Hotel,Puebla,4.0,356,74866 Jackson Neck
+La Casa de Azahar Resort,Puebla,4.0,410,483 Carmen Inlet
+Casa del Sol Retreat,Puebla,4.0,380,USS Marshall
+Oasis Retreat Hotel,Toronto,3.5,243,970 Annette Parks
+Serenity Lakeside Inn,Toronto,4.5,570,7774 Pamela Villages
+Sunset View Lodge,Toronto,3.5,264,8783 Walton Islands
+La Belle Vue,Montreal,3.0,159,43449 Cook Hills
+Le Paradis Perdu,Montreal,3.0,183,2086 Paige Locks
+Ltoile Brillante ,Montreal,3.5,251,34736 Leslie Extension
+Sunrise Retreat Hotel,Calgari,3.5,229,USNS Flores
+Mountain View Inn,Calgari,3.5,246,84198 Tiffany Villages
+Riverside Oasis Resort,Calgari,3.5,290,2025 Ramos Vista
+Luksuzni otisak,Otava,3.0,-21,3673 Paul Branch
+Rustična bašta,Otava,3.0,167,18343 Jessica Highway
+Morski zalivnik,Otava,4.0,395,00498 Scott Valley
+Snežne planine,Edmonton,4.0,356,487 Salinas Garden
+Zeleni vrtovi,Edmonton,3.0,174,224 Elizabeth Stream
+Plavo jezero,Edmonton,3.0,178,1417 Brenda Expressway
+Tropikalna oaza,Gvatemala,4.0,414,3121 Brown Wall
+Kokosove palate,Gvatemala,3.5,241,94398 Fowler Ridge
+Magnolija kraljeva,Gvatemala,3.0,185,1540 Medina Brook
+Oaza mira,Miksko,4.5,546,5323 Justin Branch
+Plavi horizonti,Miksko,3.5,230,291 Kenneth Park
+Vila suncokreta,Miksko,4.0,368,348 Laura Ways
+La Isla Encantada,Vila Nueva,3.5,259,617 Amy Ranch
+Oasis del Sol,Vila Nueva,3.5,267,9183 Christine Club
+La Perla Escondida,Vila Nueva,3.0,154,99165 James Locks
+Grand Mirage Resort  Spa,Petapa,3.0,163,1356 Steven Ferry
+Ocean Breeze Retreat,Petapa,4.0,426,160 Perry Trafficway
+Island Paradise Lodge,Petapa,3.0,140,964 Allen Causeway
+Tropical Oasis Hotel,San Huan Sakatepekuez,3.5,287,080 Edwards Mills
+Serenity Bay Resort,San Huan Sakatepekuez,3.0,135,687 Maynard Club
+Casa del Sol Retreat,San Huan Sakatepekuez,3.5,241,531 Rogers Curve
+Imperial Palace,Sao Paulo,3.5,259,228 Matthew Fort
+Hilltop Retreat,Sao Paulo,3.0,103,8658 Juan Streets
+Paradise Oasis,Sao Paulo,4.0,413,Unit 9620 Box
+Pura Vida Resort,Rio de Žaneiro,3.5,246,539 Harrison Roads
+Samba Palace Hotel,Rio de Žaneiro,4.0,421,19250 Jennifer Track
+Copacabana Retreat,Rio de Žaneiro,3.0,155,"PSC 3359, Box"
+Tropikalno Ostrvo Resort,Salvador,4.0,391,3576 Campbell Club
+Palmeiras Palace,Salvador,4.5,600,18815 Kidd Pines
+Morski Biser Hotel,Salvador,3.5,281,655 Sarah Valleys
+Oasis Resort  Spa,Fortaleza,3.0,176,07203 Mcdonald Shoal
+Paradise Bay Hotel,Fortaleza,3.5,304,3742 Russell Greens
+Sunshine Retreat,Fortaleza,3.5,275,762 Margaret Fords
+Palmira Palace,Belo Horizonte,3.5,244,528 Richard Plaza
+Oasis Retreat,Belo Horizonte,3.5,252,653 Andersen Lodge
+Serenity Suites,Belo Horizonte,3.0,182,3266 Hicks Circles
+La Luna Escarlata,Bogota,3.5,300,97979 Brittany Lake
+Casa del Bosque,Bogota,3.5,229,87302 Smith Common
+El Dorado Oasis,Bogota,3.0,161,00991 Reed Haven
+Plavi Horizonti,Kali,4.0,382,"PSC 5379, Box"
+Morsko dobro,Kali,3.5,248,358 Craig Club
+Zlatna Oaza,Kali,5.0,706,USNS Bishop
+Tropical Oasis Resort  Spa,Medellinu,3.5,241,794 Lopez Springs
+Hidden Gem Boutique Hotel,Medellinu,3.0,171,095 Winters Hollow
+Tranquility Haven Retreat,Medellinu,3.0,184,637 Ricardo Islands
+arobni biser Baranosa,Barankilja,3.5,295,7239 Sanchez Gardens
+Cvetna oaza u Barankilji,Barankilja,3.0,173,6760 Robert Drive
+Luksuzni odmor u Vrtu mira u Barankilji,Barankilja,3.0,130,5581 Ross Mill
+Plavi lagunski raj,Kartahena,4.5,522,0112 Henry Orchard
+Oaza stilskog luksuza,Kartahena,3.0,132,"PSC 3506, Box"
+Pantagana Palace,Kartahena,4.5,508,0896 Huff Trace
+El Paraiso Retreat,Buenos Ajres,3.5,275,7217 Benson Freeway
+Casa del Sol Boutique Hotel,Buenos Ajres,3.0,145,99051 Tiffany Burgs
+Rincon de la Luna Luxury Resort,Buenos Ajres,4.5,525,Unit 0822 Box
+Oaza mira,Kordoba,3.5,245,7305 Kevin Inlet
+Sunčani biser,Kordoba,3.0,149,630 Murray Prairie
+Vrt sreće,Kordoba,3.5,268,34086 Smith Prairie
+Sunflower Plaza,Rosario,4.0,429,20903 Smith Springs
+Royal Oasis,Rosario,4.0,368,"PSC 6172, Box"
+Tranquil Haven,Rosario,4.0,383,5585 Olson Isle
+La Vida Resort,Mendoza,4.5,535,1187 Robinson Way
+Rancho del Sol Retreat,Mendoza,3.5,281,225 Lopez Valley
+Cascada Grand Hotel,Mendoza,3.5,295,2018 Huffman Dale
+Casa del Sol,San Migel de Tukuman,3.5,243,338 Vincent Pines
+El Silencio Retreat,San Migel de Tukuman,3.0,116,4971 Jeffrey Corner
+Oasis Mirage Hotel ,San Migel de Tukuman,3.5,250,874 Alex Glens
+Zlatni obzor,Sidnej,4.5,519,18405 Moore Bridge
+Urbani odmor,Sidnej,3.0,95,45953 Mark Terrace
+Laguna lepote,Sidnej,4.0,434,2342 Amanda Port
+Evergreen Retreat,Melburn,3.5,285,41819 Sweeney Groves
+Ocean Breeze Boutique Hotel,Melburn,3.0,157,57555 Richard Ports
+Sunset View Lodge,Melburn,3.5,268,283 Frye Plains
+Sunčana obala,Brizbejn,4.5,537,13371 Daniels Stravenue
+Tropski raj,Brizbejn,3.0,182,9348 Wesley Falls
+Zlatna plaža,Brizbejn,4.0,379,8553 Shaffer Street
+Nebesa Hotel,Perth,4.0,413,570 Duane Via
+Zlatna Oaza Resort,Perth,3.0,158,54955 Valerie Trail
+Oblačni Zamak Lodge,Perth,4.0,363,1226 Mckee Way
+Sunčani odmor,Adelaida,4.0,354,77244 Richards Mission
+Oaza mira,Adelaida,3.5,221,4036 King Stream
+Grand Sakura,Adelaida,4.0,368,007 Douglas Greens
+Plavi zaliv hotel,Port Morsbi,3.5,231,822 Wilson Village
+Tropska oaza odmaralište,Port Morsbi,3.0,182,902 Castro Mill
+Luksuzni morski raj,Port Morsbi,3.0,132,161 Christopher Mill
+Tropicana Paradise,Lae,3.5,296,8605 Young Underpass
+Azure Waves Resort,Lae,3.5,225,7604 Monroe Squares
+Sunset Oasis Retreat,Lae,3.0,183,53936 Davis Road
+Oaza Pustinjskih Dina,Arava,3.0,139,924 Kristi Corners
+Nebo Pod Suncem,Arava,3.0,123,99483 Gibson Mission
+Zeleni Oblaci,Arava,3.0,166,929 Zachary Avenue
+Tropicana Retreat,Mount Hagen,4.0,373,8305 Kathleen Ridges
+Emerald Oasis Lodge,Mount Hagen,3.0,164,857 David Lakes
+Cloud Nine Resort,Mount Hagen,4.0,444,63888 Hall Ferry
+Sunčani Plažni Raj,Popondetta,3.5,298,352 Mccormick Isle
+Tropska Oaza,Popondetta,3.5,276,749 Jonathan Spring
+Mirno Sklonište,Popondetta,3.0,135,26568 Christopher Fall
+Seaside Retreat,Auckland,4.5,557,06181 Perry Expressway
+Harbour View Lodge,Auckland,3.0,117,0697 Miller Pass
+Rainforest Oasis Resort,Auckland,4.0,353,444 Williams Crossroad
+Palm Coast Retreat,Velington,4.5,528,466 Robert Inlet
+The Seaside Hideaway,Velington,3.5,245,Unit 1105 Box
+Mountain View Lodge,Velington,3.0,174,012 Brown Station
+Serenity Lodge,Christchurch,3.5,261,3342 Veronica Shoals
+Harbour View Inn,Christchurch,4.0,392,51592 Shaffer Ville
+Willow Woods Retreat,Christchurch,4.0,436,5792 Morales Landing
+Ocean Breeze Resort,Manukau Citi,4.0,360,4395 Jose Vista
+Sunset View Lodge,Manukau Citi,3.0,145,834 Matthews Loaf
+Serenity Retreat Hotel,Manukau Citi,3.0,174,56676 Lewis Viaduct
+Beli ponor hotel,Vaitakere,3.5,280,3976 Bailey Club
+Rajski kutak resort,Vaitakere,3.0,129,27075 Meyer Forge
+Plavetna oaza suites,Vaitakere,3.5,241,5956 Evans Spring
