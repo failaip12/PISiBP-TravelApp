@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from mysql.connector import Error
 from utils import dataTrimming, paramValuesGenerator
-from config import PATH_DATA, PATH_IMAGES_TRAVEL, PATH_IMAGES_CITIES
+from config import IMAGES_FOLDER_NAME, PATH_DATA, PATH_IMAGES_TRAVEL, PATH_IMAGES_CITIES, TRAVEL_FOLDER_NAME
 
 
 class Populator(object):
@@ -18,19 +18,18 @@ class Populator(object):
             cls.instance = super(Populator, cls).__new__(cls)
         return cls.instance
         
-
     def Connect(self):
         try:
-            #self.connection = mysql.connector.connect(host='db',
-            #                                        database='travel',
-            #                                        port='3306',
-            #                                        user='user',
-            #                                        password='test')
-            self.connection = mysql.connector.connect(host='localhost',
-                                                database='travel',
-                                                port='3306',
-                                                user='root',
-                                                password='')
+            self.connection = mysql.connector.connect(host='db',
+                                                    database='travel',
+                                                    port='3306',
+                                                    user='user',
+                                                    password='test')
+            #self.connection = mysql.connector.connect(host='localhost',
+            #                                            database='travel',
+            #                                            port='3306',
+            #                                            user='root',
+            #                                            password='')
             if self.connection.is_connected():
                 db_Info = self.connection.get_server_info()
                 print("Povezan ", db_Info)
@@ -72,15 +71,19 @@ class Populator(object):
                     conv_df = [tuple([x]) for x in df]
                 else:
                     conv_df = [tuple(x) for x in df]
-            else:
+            elif isinstance(df, pd.DataFrame):
                 # Handle pandas DataFrame
-                conv_df = [tuple(x) for x in df.to_numpy()]
+                conv_df = [tuple(row) for row in df.values]
+            else:
+                # Handle other cases (like lists)
+                conv_df = [tuple(x) if isinstance(x, (list, tuple)) else (x,) for x in df]
             
             self.cursor.executemany(stmt, conv_df)
             self.connection.commit()
         except Error as e:
             print(f"Error executing SQL statement: {e}")
             print(f"Statement: {stmt}")
+            print(f"Data type: {type(df)}")
             print(f"First row of data: {conv_df[0] if conv_df else 'No data'}")
             raise
                     
@@ -90,10 +93,6 @@ class Populator(object):
         for i, table in enumerate(tables):
             vals = paramValuesGenerator(table)
             PATTERN = f"INSERT INTO {table} VALUES({vals})"
-            # Debug print
-            print(f"\nTable: {table}")
-            print(f"Pattern: {PATTERN}")
-            print(f"First row of data: {inserts[i][0] if len(inserts[i]) > 0 else 'No data'}")
             self.Exec(PATTERN, inserts[i])
 
         self.insertSobaSlike()
@@ -114,7 +113,6 @@ class Populator(object):
     
     def insertSobaSlike(self):
         num = len(pd.read_csv(os.path.join(PATH_DATA, "sobe.csv")).index) + 1
-        path = os.path.join(PATH_IMAGES_TRAVEL, "slike_travel\\")
         #format slike -> {tip}-{br-k}bed-{koja_po_redu}.jpg
         #prvo iter do 3 i insert za trenutni ID posle id+=1
         tp=1
@@ -122,7 +120,7 @@ class Populator(object):
         while tp<=num//4:
             for y in range(1,5):
                 for z in range(1,4):
-                    photo = os.path.join(path, f"{tp}-{y}beds-{z}.jpg")
+                    photo = os.path.join(TRAVEL_FOLDER_NAME, f"{tp}-{y}beds-{z}.jpg")
                     self.insertBLOB(x,photo)
                 x+=1
             tp+=1
@@ -138,9 +136,9 @@ class Populator(object):
             path = os.path.join(PATH_IMAGES_CITIES, f"{ime}_city_center", "Image_1.jpg")
 
             if os.path.exists(path):
-                self.insertBLOB(idG,path,where="grad_ima_sliku",param="grad_id")
+                self.insertBLOB(idG,os.path.join(IMAGES_FOLDER_NAME, f"{ime}_city_center", "Image_1.jpg"),where="grad_ima_sliku",param="grad_id")
             else:
-                self.insertBLOB(idG,"slikeGradova\\Šangaj_city_center\\Image_1.jpg",where="grad_ima_sliku",param="grad_id")
+                self.insertBLOB(idG,os.path.join(IMAGES_FOLDER_NAME, "Šangaj_city_center", "Image_1.jpg"),where="grad_ima_sliku",param="grad_id")
             idG+=1
             
 pop = Populator()

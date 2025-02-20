@@ -323,8 +323,7 @@ def generateImaAktivnost():
 
     akt = pd.read_csv(os.path.join(PATH_DATA, "aktivnosti.csv"))
     ids = akt.index+1
-    ima = pd.DataFrame(columns=['aran_id','akt_id'])
-    aran=aran.drop(columns=['naziv','grad','br_soba','adresa','tip','tip_komp','p_id','prevod','mesec','mpr','datum_pocetka','datum_zavrsetka','godina','m_str','ime','zvezdice'])
+    aran=aran.drop(columns=['cena','naziv','grad','br_soba','adresa','tip','tip_komp','p_id','prevod','mesec','mpr','datum_pocetka','datum_zavrsetka','godina','m_str','ime','zvezdice'])
     aran['aran_id'] = aran.index+1
     aran['akt_id']=aran['broj_dana'].apply(decompose)
     ima = aran.explode('akt_id')
